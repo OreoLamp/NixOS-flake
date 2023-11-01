@@ -1,5 +1,4 @@
-{ options, config, lib, pkgs, inputs }:
-
+{ pkgs, ... }:
 {
   # Add GNOME packages back that are removed due to core tools not being installed
   home.packages = with pkgs.gnome; [
