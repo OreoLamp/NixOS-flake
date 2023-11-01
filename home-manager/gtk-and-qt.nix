@@ -4,8 +4,4 @@
     style.name = "adwaita-dark";
     platformTheme = "gnome";
   };
-
-  gtk = {
-    gtk.iconCache.enable = true;
-  };
 }
