@@ -1,11 +1,11 @@
 { pkgs, ... }:
 {
   # Add GNOME packages back that are removed due to core tools not being installed
-  home.packages = with pkgs.gnome; [
+  let packages = with pkgs.gnome; [
     nautilus
     seahorse
-  ] ++ with pkgs.gnomeExtensions; [
-    # Add GNOME shell extensions
+  ]; 
+  shell-extensions = with pkgs.gnomeExtensions; [
     user-themes
     dash-to-panel
     appindicator
@@ -15,4 +15,9 @@
     unite
     quake-mode
   ];
+
+  in
+  {
+    home.packages = packages ++ shell-extensions
+  };
 }
