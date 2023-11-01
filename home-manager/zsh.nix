@@ -18,11 +18,6 @@
     # History stuff
     histFile = "$HOME/.config/zsh/zsh_history.txt";
     histSize = 1000000000;
-    setOptions = [
-      "INC_APPEND_HISTORY_TIME"
-      "HIST_LEX_WORDS"
-      "HIST_VERIFY"
-    ];
 
     # Syntax highlight stuff
     syntaHighlight.enable = true;
@@ -32,6 +27,9 @@
       "CLOBBER"
       "CHECK_RUNNING_JOBS"
       "C_BASES"
+      "INC_APPEND_HISTORY_TIME"
+      "HIST_LEX_WORDS"
+      "HIST_VERIFY"
     ];
   };
 }
