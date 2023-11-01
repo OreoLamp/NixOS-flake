@@ -58,7 +58,7 @@
         
 	modules = [
           # Main config file
-          ./nixos/configuration.nix
+          ./system/configuration.nix
         ];
       };
     };
