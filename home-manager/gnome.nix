@@ -2,13 +2,11 @@
 
 {
   # Add GNOME packages back that are removed due to core tools not being installed
-  home.packages = with pkgs; [
-    gnome.nautilus
-    gnome.seahorse
-  ];
-
-  # Add GNOME shell extensions
-  home.packages = with pkgs.gnomeExtensions; [
+  home.packages = with pkgs.gnome; [
+    nautilus
+    seahorse
+  ] ++ with pkgs.gnomeExtensions; [
+    # Add GNOME shell extensions
     user-themes
     dash-to-panel
     appindicator
