@@ -1,7 +1,7 @@
 {
   qt = {
     enable = true;
-    style = "adwaita-dark";
+    style.name = "adwaita-dark";
     platformTheme = "gnome";
   };
 
