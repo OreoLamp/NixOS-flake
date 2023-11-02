@@ -66,6 +66,7 @@
       kitty
       gimp
       libsForQt5.okular
+      spotify
       spotifywm
       spotifyd
       vscode.fhs
