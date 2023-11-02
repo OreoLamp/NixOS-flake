@@ -70,9 +70,6 @@
   # Enable flatpaks
   services.flatpak.enable = true;
 
-  # Enable gnome keyring, it's the most integrated so going with that
-  security.pam.services.eero.enableGnomeKeyring = true;
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
