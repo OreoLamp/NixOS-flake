@@ -21,6 +21,6 @@
 
     services.locate = {
         package = pkgs.plocate;
-        interval = "never"
+        interval = "never";
     };
 }
