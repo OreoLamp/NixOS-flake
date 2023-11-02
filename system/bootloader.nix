@@ -1,9 +1,6 @@
 # Configures the bootloader of the system
 
 {
-    # General bootloader settings
-    boot.loader.efi.canTouchEfiVariables = true;
-
     boot.loader.grub = {
         # Enables GRUB
         enable = true;
