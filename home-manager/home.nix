@@ -62,5 +62,6 @@
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "23.05"
+  # For some reason this still requires this
+  home.stateVersion = "23.05";
 }
