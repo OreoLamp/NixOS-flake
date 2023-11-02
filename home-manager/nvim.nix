@@ -12,8 +12,5 @@
     # Aliases vi and vim to neovim
     viAlias = true;
     vimAlias = true;
-
-    # Aliases vimdiff to nvim -d
-    vimdiffAlias = true;
   };
 }
