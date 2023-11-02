@@ -57,6 +57,8 @@
       ../home-manager/git.nix
     ];
 
+  users.groups = { plocate = { }; };
+
   users.users.eero = {
     isNormalUser = true;
     description = "Eero Lampela";
