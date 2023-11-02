@@ -4,6 +4,7 @@
     nautilus
     gnome-tweaks
     gnome-shell-extensions
+    dconf-editor
   ]) ++ (with pkgs.gnomeExtensions; [
     # Add GNOME shell extensions
     dash-to-panel
