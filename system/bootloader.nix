@@ -8,6 +8,9 @@
         # Enables GRUB
         enable = true;
 
+	# Make GRUB install itself to BOOTX64.EFI
+	efiInstallAsRemovable = true;
+
 	# Defaults to the last boot option
 	default = "saved";
 
