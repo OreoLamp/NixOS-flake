@@ -7,5 +7,5 @@
     enable = true;
   };
 
-  programs.firefox.languagePacks = [ "en_US" "fi" ]
+  programs.firefox.languagePacks = [ "en_US" "fi" ];
 }
