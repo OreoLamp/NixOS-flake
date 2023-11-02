@@ -1,9 +1,12 @@
 {
     # Hostname
-    networking.hostName = "Desktop-nix";
+    networking.hostName = "desktop-nix";
 
     # Enable networking
     networking.networkmanager.enable = true;
+
+    # Define what locales are supported to begin with
+    i18n.supportedLocales = [ "all" ];
 
     # Timezone
     time.timeZone = "Europe/Helsinki";
