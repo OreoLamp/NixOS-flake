@@ -1,4 +1,4 @@
-{
+{pkgs, ...}:{
   # Add GNOME packages back that are removed due to core tools not being installed
   hm.home.packages = (with pkgs.gnome; [
     nautilus

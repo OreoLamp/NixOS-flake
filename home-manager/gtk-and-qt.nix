@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   hm.gtk = {
     enable = true;
