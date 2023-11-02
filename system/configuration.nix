@@ -37,6 +37,24 @@
 
       # User profile
       inputs.home-manager.nixosModules.home-manager
+
+      # GNOME config
+      ../home-manager/gnome.nix
+
+      # gtk and qt config
+      ../home-manager/gtk-and-qt.nix
+
+      # zsh config
+      ../home-manager/zsh.nix
+
+      # Neovim config
+      ../home-manager/nvim.nix
+      
+      # Firefox config
+      ../home-manager/firefox.nix
+
+      # Git config
+      ../home-manager/git.nix
     ];
 
   users.users.eero = {
