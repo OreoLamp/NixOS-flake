@@ -9,7 +9,7 @@
 
     # Theme stuff
     hm.iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    hm.iconTheme.name = "Adwaita"
+    hm.iconTheme.name = "Adwaita";
   };
 
   hm.qt = {
