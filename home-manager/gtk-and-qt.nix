@@ -9,7 +9,7 @@
 
   hm.gtk = {
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    iconTheme.name = "Adwaita"
+    iconTheme.name = "Adwaita";
   };
 
   hm.qt = {
