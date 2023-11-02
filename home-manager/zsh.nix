@@ -1,6 +1,6 @@
 {
   # General zsh options
-  programs.zsh = {
+  hm.programs.zsh = {
     # Enable zsh to begin with (lol)
     enable = true;
 
