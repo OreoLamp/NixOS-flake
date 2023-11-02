@@ -9,7 +9,6 @@
 
     # History stuff
     history = {
-      enable = true;
       # Path to history file
       path = "$HOME/.config/zsh/zsh_history.txt";
       
