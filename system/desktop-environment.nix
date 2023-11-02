@@ -15,9 +15,11 @@
 
 	# Removes gnome core utils, the only one of them that I want is nautilus
 	gnome.core-utilities.enable = false;
+    };
 
-	# Enables hyprland
-	programs.hyprland.enable = true;
+    programs.hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
 
     # Yeets gnome-tour

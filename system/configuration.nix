@@ -8,6 +8,7 @@
     lib,
     inputs,
     outputs,
+    hyprland,
     ... 
 }:
 
