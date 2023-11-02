@@ -18,7 +18,15 @@
     };
 
     # Yeets gnome-tour
-    environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+    environment.gnome.excludePackages = with pkgs; [ 
+      gnome-tour
+      gnome.gnome-online-miners
+      gnome-online-accounts
+      evolution-with-plugis
+      orca
+      gnome.rygel
+      gnome.gnome-user-share
+    ];
 
     # Sound config
     sound.enable = true;
