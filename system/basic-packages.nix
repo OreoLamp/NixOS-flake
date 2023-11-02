@@ -4,7 +4,6 @@
 {
     # Defines system-wide basic packages that should be always available
     environment.systemPackages = with pkgs; [
-        plocate
         strace
         du-dust
 	file
@@ -19,4 +18,9 @@
 	lshw
 	tmux
     ];
+
+    services.locate = {
+        package = pkgs.plocate;
+        interval = "never"
+    };
 }

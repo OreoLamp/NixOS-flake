@@ -60,7 +60,7 @@
   users.users.eero = {
     isNormalUser = true;
     description = "Eero Lampela";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plocate" ];
     packages = with pkgs; [
       nvimpager
       kitty
@@ -76,9 +76,6 @@
       eero = import ../home-manager/home.nix;
     };
   };
-
-  # Add locate service (file indexing)
-  services.locate.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
