@@ -1,13 +1,12 @@
 { pkgs, ... }:
 {
   programs.gtk = {
-    enable = true;
-    
     # Enable icon cache
     iconCache.enable = true;
   };
 
   hm.gtk = {
+    enable = true;
     iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     iconTheme.name = "Adwaita";
   };
