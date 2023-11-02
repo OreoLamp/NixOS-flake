@@ -39,4 +39,7 @@
 
     # Enables flatpaks (TODO: Move from here)
     services.flatpak.enable = true;
+
+    # Enables CUPS for printing
+    services.printing.enable = true;
 }
