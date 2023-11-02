@@ -1,35 +1,29 @@
 {
-  programs.zsh = {
-    # Enables zsh to begin with lol
+  # General zsh options
+  programs.zsh {
+    # Enable zsh to begin with (lol)
     enable = true;
-    
-    # Autosuggestion stuff
-    autosuggestions.enable = true;
-    autosuggestions.async = true;
-    autosuggestions.strategy = [
-      "match_prev_cmd"
-      "history"
-      "completion"
-    ];
-    
-    # Completion stuff
-    enableCompletion = true;
-    
+
+    # Sets the zsh config directory to something other than $HOME
+    dotDir = "$HOME/.config/zsh"
+
     # History stuff
-    histFile = "$HOME/.config/zsh/zsh_history.txt";
-    histSize = 1000000000;
+    history = {
+      enable = true;
+      # Path to history file
+      path = "$HOME/.config/zsh/zsh_history.txt";
+      
+      # How many lines of history should be saved at a time / total
+      save = 1000000000;
+      size = 1000000000;
+      
+      # Make commands starting with a space still be included in history
+      ignoreSpace = false;
 
-    # Syntax highlight stuff
-    syntaHighlight.enable = true;
+      # Disables history sharing, because it isn't compatable with INC_APPEND_HISTORY_TIME
+      share = false;
+    };
 
-    # General options
-    setOptions = [
-      "CLOBBER"
-      "CHECK_RUNNING_JOBS"
-      "C_BASES"
-      "INC_APPEND_HISTORY_TIME"
-      "HIST_LEX_WORDS"
-      "HIST_VERIFY"
-    ];
+    initExtra = "setopt INC_APPEND_HISTORY_TIME\nsetopt HIST_VERIFY\nsetopt HIST_LEX_WORDS\nsetopt APPEND_HISTORY"
   };
 }

@@ -4,6 +4,8 @@
   home.packages = (with pkgs.gnome; [
     nautilus
     seahorse
+    gnome-tweaks
+    gnome-shell-extensions
   ]) ++ (with pkgs.gnomeExtensions; [
     # Add GNOME shell extensions
     user-themes
