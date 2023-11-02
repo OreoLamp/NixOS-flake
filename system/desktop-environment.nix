@@ -22,7 +22,7 @@
       gnome-tour
       gnome.gnome-online-miners
       gnome-online-accounts
-      evolution-with-plugis
+      evolution-with-plugins
       orca
       gnome.rygel
       gnome.gnome-user-share
