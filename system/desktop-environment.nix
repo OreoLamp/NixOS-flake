@@ -15,16 +15,15 @@
 
 	# Removes gnome core utils, the only one of them that I want is nautilus
 	gnome.core-utilities.enable = false;
+
+	# Enables hyprland
+	programs.hyprland.enable = true;
     };
 
     # Yeets gnome-tour
     environment.gnome.excludePackages = with pkgs; [ 
       gnome-tour
-      gnome.gnome-online-miners
-      gnome-online-accounts
       evolutionWithPlugins
-      orca
-      gnome.rygel
       gnome.gnome-user-share
     ];
 
