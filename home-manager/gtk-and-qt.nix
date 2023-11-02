@@ -1,6 +1,4 @@
-{ pkgs, lib, config, inputs, outputs, ... }:
 {
-  imports = [( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )];
   hm.gtk = {
     enable = true;
     

@@ -1,7 +1,4 @@
-{ pkgs, lib, inputs, outputs, config, ... }:
 {
-  imports = [( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )];
-
   # Add GNOME packages back that are removed due to core tools not being installed
   hm.home.packages = (with pkgs.gnome; [
     nautilus

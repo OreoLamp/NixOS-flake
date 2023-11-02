@@ -10,9 +10,6 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    # Makes hm an alias for home-manager.users.eero for easier management
-    ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
-
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 

@@ -17,7 +17,10 @@
 
   imports =
     [ 
-    # Hardware config (autoconfigured by the hardware scan)
+      # Add an alias "hm" for "home-manager.users.eero"
+      ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
+
+      # Hardware config (autoconfigured by the hardware scan)
       ./hardware-configuration.nix
 
       # Bootloader config
