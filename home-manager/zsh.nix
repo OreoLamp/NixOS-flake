@@ -5,7 +5,7 @@
     enable = true;
 
     # Sets the zsh config directory to something other than $HOME
-    dotDir = "$HOME/.config/zsh"
+    dotDir = "$HOME/.config/zsh";
 
     # History stuff
     history = {
