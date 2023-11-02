@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  gtk = {
+  programs.gtk = {
     enable = true;
     
     # Enable icon cache
