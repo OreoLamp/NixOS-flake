@@ -1,4 +1,4 @@
-{ packages, lib, config, inputs, outputs, ... }:
+{ pkgs, lib, config, inputs, outputs, ... }:
 {
   imports = [( lib.mkAliasOptionModule [ "hm" ] [ "home-manageR" "users" "eero" ] )];
   hm.gtk = {
