@@ -24,6 +24,6 @@
       share = false;
     };
 
-    initExtra = "setopt INC_APPEND_HISTORY_TIME\nsetopt HIST_VERIFY\nsetopt HIST_LEX_WORDS\nsetopt APPEND_HISTORY"
+    initExtra = "setopt INC_APPEND_HISTORY_TIME\nsetopt HIST_VERIFY\nsetopt HIST_LEX_WORDS\nsetopt APPEND_HISTORY";
   };
 }
