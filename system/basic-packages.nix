@@ -20,6 +20,7 @@
     ];
 
     services.locate = {
+        enable = true;
         package = pkgs.plocate;
         interval = "never";
     };
