@@ -25,7 +25,7 @@
 	LC_NAME = "fi_FI.UTF-8";
 	LC_NUMERIC = "fi_FI.UTF-8";
 	LC_PAPER = "fi_FI.UTF-8";
-	LC_TIME = "en_SE.UTF-8";
+	LC_TIME = "en_DK.UTF-8";
     };
 
     # xkbcomp keyboard stuff, set in xserver (for some reason)
