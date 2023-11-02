@@ -1,14 +1,15 @@
 { pkgs, ... }:
 {
-  hm.gtk = {
+  gtk = {
     enable = true;
     
     # Enable icon cache
-    gtk.iconCache.enable = true;
+    iconCache.enable = true;
+  };
 
-    # Theme stuff
-    hm.iconTheme.package = pkgs.gnome.adwaita-icon-theme;
-    hm.iconTheme.name = "Adwaita";
+  hm.gtk = {
+    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
+    iconTheme.name = "Adwaita"
   };
 
   hm.qt = {
