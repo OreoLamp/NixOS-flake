@@ -57,17 +57,22 @@
       ../home-manager/git.nix
     ];
 
-  users.groups = { plocate = { }; };
-
   users.users.eero = {
     isNormalUser = true;
     description = "Eero Lampela";
-    extraGroups = [ "networkmanager" "wheel" "plocate" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       nvimpager
       kitty
       gimp
       libsForQt5.okular
+      spotifywm
+      spotifyd
+      vscode.fhs
+      jetbrains.pycharm-professional
+      jetbrains.clion
+      jetbrains.idea-ultimate
+      jetbrains-toolbox
     ];
   };
 
