@@ -5,12 +5,12 @@
     enable = true;
 
     # Sets the zsh config directory to something other than $HOME
-    dotDir = "$HOME/.config/zsh";
+    dotDir = ".config/zsh";
 
     # History stuff
     history = {
       # Path to history file
-      path = "$HOME/.config/zsh/zsh_history.txt";
+      path = ".config/zsh/zsh_history.txt";
       
       # How many lines of history should be saved at a time / total
       save = 1000000000;

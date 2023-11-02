@@ -10,6 +10,9 @@
 }: {
   # You can import other home-manager modules here
   imports = [
+    # Makes hm an alias for home-manager.users.eero for easier management
+    ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
+
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
@@ -30,9 +33,12 @@
 
     # Firefox config
     ./firefox.nix
+
+    # Git config
+    ./git.nix
   ];
 
-  nixpkgs = {
+  hm.nixpkgs = {
     # You can add overlays here
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
@@ -50,18 +56,18 @@
   };
 
   # Sets username
-  home = {
+  hm.home = {
     username = "eero";
     homeDirectory = "/home/eero";
   };
   
   # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
+  hm.programs.home-manager.enable = true;
+  hm.programs.git.enable = true;
 
   # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
+  hm.systemd.user.startServices = "sd-switch";
 
   # For some reason this still requires this
-  home.stateVersion = "23.05";
+  hm.home.stateVersion = "23.05";
 }

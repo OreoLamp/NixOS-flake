@@ -1,13 +1,15 @@
-{ pkgs, ... }:
+{ pkgs, lib, inputs, outputs, config, ... }:
 {
+  imports = [( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )];
+
   # Add GNOME packages back that are removed due to core tools not being installed
-  home.packages = (with pkgs.gnome; [
+  hm.home.packages = (with pkgs.gnome; [
     nautilus
-    seahorse
     gnome-tweaks
     gnome-shell-extensions
   ]) ++ (with pkgs.gnomeExtensions; [
     # Add GNOME shell extensions
+    user-themes
     dash-to-panel
     appindicator
     blur-my-shell
@@ -16,4 +18,8 @@
     unite
     quake-mode
   ]);
+
+  # Enable gnome-keyring and seahorse
+  security.pam.services.eero.enableGnomeKeyring = true;
+  programs.seahorse.enable = true;
 }

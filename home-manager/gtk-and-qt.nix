@@ -1,12 +1,20 @@
-{ packages, ... }:
+{ packages, lib, config, inputs, outputs, ... }:
 {
-  gtk = {
+  imports = [( lib.mkAliasOptionModule [ "hm" ] [ "home-manageR" "users" "eero" ] )];
+  hm.gtk = {
     enable = true;
+    
+    # Enable icon cache
+    gtk.iconCache.enable = true;
+
+    # Theme stuff
+    hm.theme.package = pkgs.gnome.
+    hm.iconTheme.package = pkgs.gnome.adwaita-icon-theme;
+    hm.iconTheme.name = "Adwaita"
   };
 
-  qt = {
+  hm.qt = {
     enable = true;
     platformTheme = "gnome";
-    style.name = "adwaita-dark";
   };
 }
