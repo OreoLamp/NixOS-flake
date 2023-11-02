@@ -17,6 +17,7 @@
 	pciutils
 	lshw
 	tmux
+	nix-tree
     ];
 
     services.locate = {
