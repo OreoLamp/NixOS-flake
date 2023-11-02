@@ -33,4 +33,10 @@
 	pulse.enable = true;
 	jack.enable = true;
     };
+
+    # Enables gnome-keyring for keyring management
+    services.gnome.gnome-keyring.enable = true;
+
+    # Enables flatpaks (TODO: Move from here)
+    services.flatpak.enable = true;
 }

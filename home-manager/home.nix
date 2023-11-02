@@ -67,9 +67,6 @@
     ];
   };
 
-  # Enable flatpaks
-  services.flatpak.enable = true;
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
