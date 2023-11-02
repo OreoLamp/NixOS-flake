@@ -26,18 +26,18 @@
   };
 
   # Sets username
-  hm.home = {
+  home = {
     username = "eero";
     homeDirectory = "/home/eero";
   };
   
   # Enable home-manager and git
-  hm.programs.home-manager.enable = true;
-  hm.programs.git.enable = true;
+  programs.home-manager.enable = true;
+  programs.git.enable = true;
 
   # Nicely reload system units when changing configs
-  hm.systemd.user.startServices = "sd-switch";
+  systemd.user.startServices = "sd-switch";
 
   # For some reason this still requires this
-  hm.home.stateVersion = "23.05";
+  home.stateVersion = "23.05";
 }
