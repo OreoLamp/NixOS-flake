@@ -7,6 +7,7 @@
     dconf-editor
   ]) ++ (with pkgs.gnomeExtensions; [
     # Add GNOME shell extensions
+    user-themes
     dash-to-panel
     appindicator
     blur-my-shell
