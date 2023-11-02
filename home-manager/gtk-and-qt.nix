@@ -8,7 +8,6 @@
     gtk.iconCache.enable = true;
 
     # Theme stuff
-    hm.theme.package = pkgs.gnome.
     hm.iconTheme.package = pkgs.gnome.adwaita-icon-theme;
     hm.iconTheme.name = "Adwaita"
   };
