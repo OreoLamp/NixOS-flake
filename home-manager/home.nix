@@ -55,18 +55,6 @@
     homeDirectory = "/home/eero";
   };
   
-  users.users.eero = {
-    isNormalUser = true;
-    description = "Eero Lampela";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      nvimpager
-      kitty
-      gimp
-      libsForQt5.okular
-    ];
-  };
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;

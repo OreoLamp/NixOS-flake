@@ -36,6 +36,18 @@
       inputs.home-manager.nixosModules.home-manager
     ];
 
+  users.users.eero = {
+    isNormalUser = true;
+    description = "Eero Lampela";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      nvimpager
+      kitty
+      gimp
+      libsForQt5.okular
+    ];
+  };
+
   # Home-manager config to make it load stuff
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs; };
