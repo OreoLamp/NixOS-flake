@@ -189,7 +189,7 @@
 
     # Yeets the desktop entry for the nix manual
     hm.xdg.desktopEntries = {
-        nixos-help = {
+        nixos-manual = {
             name = "NixOS Manual";
             noDisplay = true;
         };
@@ -220,13 +220,13 @@
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        dotDir = "${config.hm.xdg.configHome}/zsh";
+        dotDir = ".config/zsh";
 
         # History stuff
         history = {
             ignoreDups = false;
             ignoreSpace = false;
-            path = "${config.hm.xdg.configHome}/zsh/zsh_history.txt";
+            path = ".config/zsh/zsh_history.txt";
             save = 1000000000;
             size = 1000000000;
             share = false;
