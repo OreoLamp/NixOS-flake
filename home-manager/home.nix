@@ -24,20 +24,4 @@
       # })
     ];
   };
-
-  # Sets username
-  home = {
-    username = "eero";
-    homeDirectory = "/home/eero";
-  };
-  
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # For some reason this still requires this
-  home.stateVersion = "23.05";
 }

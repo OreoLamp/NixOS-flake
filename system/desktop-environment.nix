@@ -17,11 +17,6 @@
 	gnome.core-utilities.enable = false;
     };
 
-    programs.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    };
-
     # Yeets gnome-tour
     environment.gnome.excludePackages = with pkgs; [ 
       gnome-tour
