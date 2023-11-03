@@ -178,6 +178,7 @@
     # Basic home-manager config
     hm.programs.home-manager.enable = true;
     hm.home.stateVersion = "23.05";
+    hm.xdg.enable = true;
     hm.home = {
         username = "eero";
         homeDirectory = "/home/eero";
@@ -185,6 +186,11 @@
 
     # Restart systemd user services when switching configs
     hm.systemd.user.startServices = "sd-switch";
+
+    # Yeets the desktop entry for the nix manual
+    hm.xdg.desktopEntries = {
+        nixos-help = { };
+    };
 
     # Git config
     hm.programs.git = {
