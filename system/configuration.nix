@@ -218,7 +218,7 @@
   hm.programs.zsh = {
     enable = true;
     # Directory for zsh config files (defaults to $HOME)
-    dotDir = ".config/zsh"
+    dotDir = ".config/zsh";
 
     # Makes zsh add lines beginning with spaces to history 
     history.ignoreSpace = false;
