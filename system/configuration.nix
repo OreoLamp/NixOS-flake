@@ -77,7 +77,7 @@
   console.useXkbConfig = true;
 
   # Locale and timezone stuff
-  time.timezone = "Europe/Helsinki";
+  time.timeZone = "Europe/Helsinki";
   i18n = {
     supportedLocales = [ "all" ];
     defaultLocale = "en_US.UTF-8";
