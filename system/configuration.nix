@@ -48,7 +48,7 @@
     useOSProber = true;
 
     # Makes GRUB use the last booted boot entry by default
-    default = saved;
+    default = "saved";
 
     # Makes GRUB install to BOOTX64.EFI, the default bootloader
     efiInstallAsRemovable = true;
