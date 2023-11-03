@@ -153,7 +153,7 @@
       gnome-tweaks
       gnome-shell-extensions
       dconf-editor
-    ]) ++ with pkgs.gnomeExtensions; [
+    ]) ++ (with pkgs.gnomeExtensions; [
       dash-to-panel
       appindicator
       blur-my-shell
