@@ -265,7 +265,7 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    qt.style = "adwaita-dark";
+    style = "adwaita-dark";
   };
 
   # Firefox config
