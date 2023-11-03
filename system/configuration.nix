@@ -155,6 +155,7 @@
       gnome-shell-extensions
       dconf-editor
     ]) ++ (with pkgs.gnomeExtensions; [
+      user-themes
       app-hider
       dash-to-panel
       appindicator
@@ -200,33 +201,33 @@
   # Makes zsh the default user shell
   users.defaultUserShell = pkgs.zsh;
 
-  # zsh config
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    
-    # History stuff
-    histFile = "$HOME/.config/zsh/zsh_history.txt";
-    histSize = 1000000000;
-    setOptions = [
-      "INC_APPEND_HISTORY_TIME"
-      "HIST_VERIFY"
-      "HIST_LEX_WORDS"
-      "APPEND_HISTORY"
-    ];
-  };
-
-  # More zsh config
+  # zsh config, done in home-manager because home-manager is actually moronic
+  programs.zsh.enable = true;
   hm.programs.zsh = {
     enable = true;
-    # Directory for zsh config files (defaults to $HOME)
-    dotDir = ".config/zsh";
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    dotDir = ".config/zsh"
+    
+    # History stuff
+    history = {
+      ignoreDups = false;
+      ignoreSpace = false;
+      path = "zsh_history.txt";
+      save = 1000000000;
+      size = 1000000000;
+      share = false;
+    };
 
-    # Makes zsh add lines beginning with spaces to history 
-    history.ignoreSpace = false;
+    # Syntax highlighting
+    syntaxHighlighting.enable = true;
 
-    # Disables sharing history, as it's not compatable with INC_APPEND_HISTORY_TIME
-    history.share = false;
+    initExtra = "
+      setopt APPEND_HISTORY
+      setopt HIST_LEX_WORDS
+      setopt HIST_VERIFY
+      setopt INC_APPEND_HISTORY_TIME
+    ";
   };
 
 
