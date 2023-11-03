@@ -7,292 +7,298 @@
     ... 
 }:
 {
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    system.stateVersion = "23.05"; # Did you read the comment?
 
-  # Allow non-FOSS packages
-  nixpkgs.config.allowUnfree = true;
+    # Allow non-FOSS packages
+    nixpkgs.config.allowUnfree = true;
 
-  # Enable nix-command
-  nix.settings.experimental-features = [ "nix-command" ];
+    # Enable nix-command
+    nix.settings.experimental-features = [ "nix-command" ];
 
-  imports =
-    [ 
-      # Add an alias "hm" for "home-manager.users.eero"
-      ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
+    imports = [ 
+        # Add an alias "hm" for "home-manager.users.eero"
+        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
 
-      # User profile
-      inputs.home-manager.nixosModules.home-manager
+        # User profile
+        inputs.home-manager.nixosModules.home-manager
 
-      # Hardware config
-      ./hardware-configuration.nix
+        # Hardware config
+        ./hardware-configuration.nix
     ];
 
 
-  # ======================== #
-  # Bootloader configuration #
-  # ======================== #
+    # ======================== #
+    # Bootloader configuration #
+    # ======================== #
 
 
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    gfxmodeEfi = "auto";
+    boot.loader.grub = {
+        enable = true;
+        efiSupport = true;
+        gfxmodeEfi = "auto";
 
-    # Uses OSProber to find other bootloaders
-    useOSProber = true;
+        # Uses OSProber to find other bootloaders
+        useOSProber = true;
 
-    # Makes GRUB use the last booted boot entry by default
-    default = "saved";
+        # Makes GRUB use the last booted boot entry by default
+        default = "saved";
 
-    # Makes GRUB install to BOOTX64.EFI, the default bootloader
-    efiInstallAsRemovable = true;
+        # Makes GRUB install to BOOTX64.EFI, the default bootloader
+        efiInstallAsRemovable = true;
 
-    # Defines the device where GRUB is installed
-    # Has to be "nodev", otherwise nix will install GRUB in BIOS mode (???WHY???)
-    device = "nodev";
-  };
-
-
-  # =============================== #
-  # System-wide basic configuration #
-  # =============================== #
-
-
-  # Networking config
-  networking.hostName = "desktop-nix";
-  networking.networkmanager.enable = true;
-
-  # Keyboard layout stuff
-  services.xserver = {
-    layout = "fi";
-    xkbModel = "pc105";
-  };
-  # Makes console settings follow xkb settings
-  console.useXkbConfig = true;
-
-  # Locale and timezone stuff
-  time.timeZone = "Europe/Helsinki";
-  i18n = {
-    supportedLocales = [ "all" ];
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LANG = "en_US.UTF-8";
-      LANGUAGE = "en_US.UTF-8";
-      LC_ADDRESS = "fi_FI.UTF-8";
-      LC_IDENTIFICATION = "fi_FI.UTF-8";
-      LC_MEASUREMENT = "fi_FI.UTF-8";
-      LC_MONETARY = "fi_FI.UTF-8";
-      LC_NAME = "fi_FI.UTF-8";
-      LC_NUMERIC = "fi_FI.UTF-8";
-      LC_PAPER = "fi_FI.UTF-8";
-      LC_TIME = "en_DK.UTF-8";
+        # Defines the device where GRUB is installed
+        # Has to be "nodev", otherwise nix will install GRUB in BIOS mode (???WHY???)
+        device = "nodev";
     };
-  };
-
-  # Enables locate services, and uses plocate for them
-  services.locate = {
-    enable = true;
-    package = pkgs.plocate;
-    interval = "never";
-    localuser = null;
-  };
-
-  # System-wide packages that I want always available
-  environment.systemPackages = with pkgs; [
-    # Basic packages that really should be standard
-    file
-    strace
-    curl
-    pciutils
-    lshw
-    psmisc
-    # Conveniences
-    du-dust
-    unar
-    btop
-    tmux
-    nnn
-    nvimpager
-    nix-tree
-  ];
-
-  # System-wide neovim config
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-  };
 
 
-  # =========== #
-  # User config #
-  # =========== #
+    # =============================== #
+    # System-wide basic configuration #
+    # =============================== #
 
-  users.users.eero = {
-    isNormalUser = true;
-    description = "Eero Lampela";
-    extraGroups = [ "networkmanager" "wheel" ];
 
-    # User packages
-    packages = with pkgs; ([
-      kitty
-      gimp
-      libsForQt5.okular
-      spotify
-      spotifywm
-      spotifyd
-      vscode.fhs
-    ]) ++ (with pkgs.gnome; [
-      nautilus
-      gnome-tweaks
-      gnome-shell-extensions
-      dconf-editor
-    ]) ++ (with pkgs.gnomeExtensions; [
-      user-themes
-      app-hider
-      dash-to-panel
-      appindicator
-      blur-my-shell
-      just-perfection
-      gnome-40-ui-improvements
-      unite
-      quake-mode
-    ]);
-  };
+    # Networking config
+    networking.hostName = "desktop-nix";
+    networking.networkmanager.enable = true;
 
-  # Makes home-manager load stuff
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      eero = import ../home-manager/home.nix;
+    # Keyboard layout stuff
+    services.xserver = {
+      layout = "fi";
+      xkbModel = "pc105";
     };
-  };
+    # Makes console settings follow xkb settings
+    console.useXkbConfig = true;
 
-  # Basic home-manager config
-  hm.programs.home-manager.enable = true;
-  hm.home = {
-    username = "eero";
-    homeDirectory = "/home/eero";
-  };
-  hm.systemd.user.startServices = "sd-switch";
-  hm.home.stateVersion = "23.05";
-
-  # Git config
-  hm.programs.git = {
-    enable = true;
-    userName = "Eero Lampela";
-    userEmail = "eero.lampela@gmail.com";
-    extraConfig = {
-      core.pager = "$PAGER";
-      diff.algorithm = "minimal";
-      merge.guitool = "nvimdiff";
-      submodule.fetchJobs = "0";
-      init.defaultBranch = "main";
+    # Locale and timezone stuff
+    time.timeZone = "Europe/Helsinki";
+    i18n = {
+      supportedLocales = [ "all" ];
+      defaultLocale = "en_US.UTF-8";
+      extraLocaleSettings = {
+        LANG = "en_US.UTF-8";
+        LANGUAGE = "en_US.UTF-8";
+        LC_ADDRESS = "fi_FI.UTF-8";
+        LC_IDENTIFICATION = "fi_FI.UTF-8";
+        LC_MEASUREMENT = "fi_FI.UTF-8";
+        LC_MONETARY = "fi_FI.UTF-8";
+        LC_NAME = "fi_FI.UTF-8";
+        LC_NUMERIC = "fi_FI.UTF-8";
+        LC_PAPER = "fi_FI.UTF-8";
+        LC_TIME = "en_DK.UTF-8";
+      };
     };
-  };
 
-  # Makes zsh the default user shell
-  users.defaultUserShell = pkgs.zsh;
+    # Enables locate services, and uses plocate for them
+    services.locate = {
+        enable = true;
+        package = pkgs.plocate;
+        interval = "never";
+        localuser = null;
+    };
 
-  # zsh config, done in home-manager because home-manager is actually moronic
-  programs.zsh.enable = true;
-  hm.programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableAutosuggestions = true;
-    dotDir = ".config/zsh";
+    # System-wide packages that I want always available
+    environment.systemPackages = with pkgs; [
+        # Basic packages that really should be standard
+        file
+        strace
+        curl
+        pciutils
+        lshw
+        psmisc
+        # Conveniences
+        du-dust
+        unar
+        btop
+        tmux
+        nnn
+        nvimpager
+        nix-tree
+    ];
+
+    # System-wide neovim config
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
+    };
+
+
+    # =========== #
+    # User config #
+    # =========== #
+
+    users.users.eero = {
+        isNormalUser = true;
+        description = "Eero Lampela";
+        extraGroups = [ "networkmanager" "wheel" ];
+
+        # User packages
+        packages = with pkgs; ([
+            cliphist
+            kitty
+            gimp
+            libsForQt5.okular
+            spotify
+            spotifywm
+            spotifyd
+            vscode.fhs
+        ]) ++ (with pkgs.gnome; [
+            nautilus
+            gnome-tweaks
+            gnome-shell-extensions
+            dconf-editor
+        ]) ++ (with pkgs.gnomeExtensions; [
+            user-themes
+            app-hider
+            dash-to-panel
+            appindicator
+            blur-my-shell
+            just-perfection
+            gnome-40-ui-improvements
+            unite
+            quake-mode
+        ]);
+    };
+
+    # Makes home-manager load stuff
+    home-manager = {
+        extraSpecialArgs = { inherit inputs outputs; };
+        users = {
+            eero = import ../home-manager/home.nix;
+        };
+    };
+
+    # Basic home-manager config
+    hm.programs.home-manager.enable = true;
+    hm.home.stateVersion = "23.05";
+    hm.home = {
+        username = "eero";
+        homeDirectory = "/home/eero";
+    };
+
+    # Restart systemd user services when switching configs
+    hm.systemd.user.startServices = "sd-switch";
+
+    # Git config
+    hm.programs.git = {
+        enable = true;
+        userName = "Eero Lampela";
+        userEmail = "eero.lampela@gmail.com";
+        extraConfig = {
+            core.pager = "$PAGER";
+            diff.algorithm = "minimal";
+            merge.guitool = "nvimdiff";
+            submodule.fetchJobs = "0";
+            init.defaultBranch = "main";
+        };
+    };
+
+    # Makes zsh the default user shell
+    users.defaultUserShell = pkgs.zsh;
+
+    # zsh config, done in home-manager because home-manager is actually moronic
+    # TODO: This whole shitshow in .zshrc, and just yeet it in the correct place with home-manager
+    # (fuck home-manager)
+    programs.zsh.enable = true;
+    hm.programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        enableAutosuggestions = true;
+        dotDir = "${config.xdg.configHome}/zsh";
+
+        # History stuff
+        history = {
+            ignoreDups = false;
+            ignoreSpace = false;
+            path = "${config.xdg.configHome}/zsh/zsh_history.txt";
+            save = 1000000000;
+            size = 1000000000;
+            share = false;
+        };
+
+        # Syntax highlighting
+        syntaxHighlighting.enable = true;
+
+        # Extra options to enable in .zshrc
+        initExtra = "
+            setopt APPEND_HISTORY
+            setopt HIST_LEX_WORDS
+            setopt HIST_VERIFY
+            setopt INC_APPEND_HISTORY_TIME
+        ";
+    };
+
+    # Enables cliphist
+    hm.services.cliphist.enable = true;
+
+    # Firefox enablement
+    programs.firefox.enable = true; 
+    hm.programs.firefox.enable = true;
+
+
+    # ========================== #
+    # Desktop environment config #
+    # ========================== #
     
-    # History stuff
-    history = {
-      ignoreDups = false;
-      ignoreSpace = false;
-      path = "zsh_history.txt";
-      save = 1000000000;
-      size = 1000000000;
-      share = false;
+
+    # For some reason GNOME requires xserver config stuff even on wayland
+    services.xserver = {
+        # Required even on wayland (bruh)
+        enable = true;
+
+        # Enables GNOME and gdm (the locks screen)
+        displayManager.gdm.enable = true;
+        desktopManager.gnome.enable = true;
+
+        # Yeets xterm
+        excludePackages = with pkgs; [ xterm ];
     };
 
-    # Syntax highlighting
-    syntaxHighlighting.enable = true;
+    # Removes gnome core utilities, I want almost none of them
+    services.gnome.core-utilities.enable = false;
 
-    initExtra = "
-      setopt APPEND_HISTORY
-      setopt HIST_LEX_WORDS
-      setopt HIST_VERIFY
-      setopt INC_APPEND_HISTORY_TIME
-    ";
-  };
+    # Yeets gnome-tour
+    environment.gnome.excludePackages = with pkgs; [ 
+        gnome-tour
+        orca
+    ];
 
+    # Enables gnome-keyring and seahorse
+    security.pam.services.eero.enableGnomeKeyring = true;
+    services.gnome.gnome-keyring.enable = true;
+    programs.seahorse.enable = true;
 
-  # ========================== #
-  # Desktop environment config #
-  # ========================== #
-  
+    # Config for gtk and qt
+    gtk.iconCache.enable = true;
+    qt = {
+        enable = true;
+        platformTheme = "gnome";
+        style = "adwaita-dark";
+    };
 
-  # For some reason GNOME requires xserver config stuff even on wayland
-  services.xserver = {
-    # Required even on wayland (bruh)
-    enable = true;
-    
-    # Enables GNOME and gdm (the locks screen)
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # Sound config
+    sound.enable = true;
+    hardware.pulseaudio.enable = false;
+    security.rtkit.enable = true;
 
-    # Yeets xterm
-    excludePackages = with pkgs; [ xterm ];
-  };
+    # Pipewire stuff for sound
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        pulse.enable = true;
+        jack.enable = true;
+    };
 
-  # Removes gnome core utilities, I want almost none of them
-  services.gnome.core-utilities.enable = false;
+    # Enable printing via CUPS
+    services.printing.enable = true;
 
-  # Yeets gnome-tour
-  environment.gnome.excludePackages = with pkgs; [ 
-    gnome-tour
-    orca
-  ];
-
-  # Enables gnome-keyring and seahorse
-  security.pam.services.eero.enableGnomeKeyring = true;
-  services.gnome.gnome-keyring.enable = true;
-  programs.seahorse.enable = true;
-
-  # Config for gtk and qt
-  gtk.iconCache.enable = true;
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
-
-  # Firefox config
-  programs.firefox = {
-    enable = true;
-    languagePacks = [ "en-US" "fi" ];
-  };
-
-  # Sound config
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-
-  # Pipewire stuff for sound
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Enable printing via CUPS
-  services.printing.enable = true;
-
-  # Enables flatpaks
-  services.flatpak.enable = true;
-}
+    # Enables flatpaks
+    services.flatpak.enable = true;
+}   
