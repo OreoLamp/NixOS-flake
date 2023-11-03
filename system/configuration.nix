@@ -240,7 +240,7 @@
     
     # Enables GNOME and gdm (the locks screen)
     displayManager.gdm.enable = true;
-    desktopManger.gnome.enable = true;
+    desktopManager.gnome.enable = true;
 
     # Yeets xterm
     excludePackages = with pkgs; [ xterm ];
