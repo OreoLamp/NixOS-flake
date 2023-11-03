@@ -211,13 +211,13 @@
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        dotDir = "${config.xdg.configPath}/zsh";
+        dotDir = "${config.hm.xdg.configPath}/zsh";
 
         # History stuff
         history = {
             ignoreDups = false;
             ignoreSpace = false;
-            path = "${config.xdg.configPath}/zsh/zsh_history.txt";
+            path = "${config.hm.xdg.configPath}/zsh/zsh_history.txt";
             save = 1000000000;
             size = 1000000000;
             share = false;
