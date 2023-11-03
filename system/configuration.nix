@@ -207,7 +207,7 @@
     enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
-    dotDir = ".config/zsh"
+    dotDir = ".config/zsh";
     
     # History stuff
     history = {
