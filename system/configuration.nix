@@ -100,6 +100,7 @@
     enable = true;
     package = pkgs.plocate;
     interval = "never";
+    localUser = null;
   };
 
   # System-wide packages that I want always available
