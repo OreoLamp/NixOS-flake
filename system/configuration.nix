@@ -190,6 +190,7 @@
     # Yeets the desktop entry for the nix manual
     hm.xdg.desktopEntries = {
         nixos-help = {
+            name = "NixOS Manual";
             noDisplay = true;
         };
     };
