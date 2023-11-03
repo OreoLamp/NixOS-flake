@@ -158,7 +158,7 @@
       appindicator
       blur-my-shell
       just-perfection
-      gnome40-ui-improvements
+      gnome-40-ui-improvements
       unite
       quake-mode
     ]);
