@@ -211,7 +211,7 @@
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        dotDir = "${config.xdg.configHome}/zsh";
+        dotDir = "${config.xdg.configPath}/zsh";
 
         # History stuff
         history = {
