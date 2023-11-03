@@ -155,6 +155,7 @@
       gnome-shell-extensions
       dconf-editor
     ]) ++ (with pkgs.gnomeExtensions; [
+      app-hider
       dash-to-panel
       appindicator
       blur-my-shell
