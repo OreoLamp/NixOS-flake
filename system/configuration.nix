@@ -212,7 +212,7 @@
       "HIST_LEX_WORDS"
       "APPEND_HISTORY"
     ];
-  }
+  };
 
   # More zsh config
   hm.programs.zsh = {
