@@ -18,8 +18,8 @@
   # Allow non-FOSS packages
   nixpkgs.config.allowUnfree = true;
 
-  # Make nix automatically optimise the store
-  nix.settings.auto-optimise-store = true;
+  # Enable nix-command
+  nix.settings.experimental-features = [ "nix-command" ];
 
   imports =
     [ 
