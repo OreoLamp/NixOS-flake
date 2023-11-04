@@ -144,8 +144,6 @@
 	        # Basic utilities
             neofetch
             piper
-            kitty
-            cliphist
             # Editors
             libsForQt5.okular
             inkscape
@@ -268,7 +266,7 @@
     hm.services.cliphist.enable = true;
 
     # Kitty config
-    programs.kitty = {
+    hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
         theme = "Tokyo Night";
