@@ -223,41 +223,42 @@
         subpixel.rgba = "rgb";
         allowBitmaps = false;
         # Font preferences
-        defaultFonts = {
-            monospace = [
-                "JetBrainsMonoNL NerdFont"
-                "DejaVuSansM Nerd Font"
-                "NotoMono Nerd Font"
-                "Noto Sans Mono"
-            ];
-            sansSerif = [
-                "Noto Sans"
-            ];
-        };
+        # defaultFonts = {
+        #     monospace = [
+        #         "JetBrainsMonoNL NerdFont"
+        #         "DejaVuSansM Nerd Font"
+        #         "NotoMono Nerd Font"
+        #         "Noto Sans Mono"
+        #     ];
+        #     sansSerif = [
+        #         "Inter"
+        #         "Noto Sans"
+        #     ];
+        # };
     };
 
     # Font packages (oh god there's so many)
     fonts.packages = with pkgs; [
-        cantarell-fonts
-        fira
-        fira-code
-        fira-go
-        fira-mono
-        font-awesome
-        helvetica-neue-lt-std
-        inconsolata
-        inter
-        jetbrains-mono
-        julia-mono
-        lato
-        montserrat
-        nerdfonts
-        noto-fonts
-        roboto
-        source-sans
-        source-serif
-        ubuntu_font_family # Wtf underscores???
-        google-fonts # This is probably an awful idea lol
+        # fira
+        # fira-code
+        # fira-go
+        # fira-mono
+        # font-awesome
+        # helvetica-neue-lt-std
+        # inconsolata
+        # inter
+        # jetbrains-mono
+        # julia-mono
+        # lato
+        # montserrat
+        # noto-fonts
+        # roboto
+        # source-sans
+        # source-serif
+        # ubuntu_font_family # Wtf underscores???
+        (google-fonts.override { fonts = [
+
+        ]; })
     ];
 
     # Git config
