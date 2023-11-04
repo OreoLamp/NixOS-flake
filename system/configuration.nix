@@ -150,7 +150,6 @@
             gimp
             audacity
             obs-studio
-            zotero
             qbittorrent
             vscode.fhs
             jetbrains-toolbox
