@@ -212,6 +212,38 @@
         };
     };
 
+    # Font config (oh god help me)
+    fonts.fontconfig = {
+        # Hinting options
+        hinting.style = "full";
+        subpixel.rgba = "rgb";
+        allowBitmaps = false;
+        # Font preferences (TODO)
+    };
+
+    # Font packages (oh god there's so many)
+    fonts.packages = with pkgs; [
+        cantarell-fonts
+        fira
+        fira-code
+        fira-go
+        fira-mono
+        font-awesome
+        helvetica-neue-lt-std
+        inconsolata
+        inter
+        jetbrains-mono
+        julia-mono
+        lato
+        monsterrat
+        nerdfonts
+        noto-fonts
+        roboto
+        source-sans
+        source-serif
+        ubuntu-font-family
+    ];
+
     # Git config
     hm.programs.git = {
         enable = true;
@@ -334,4 +366,4 @@
 
     # Enables flatpaks
     services.flatpak.enable = true;
-}   
+}
