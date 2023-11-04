@@ -161,6 +161,7 @@
             nomacs
             calibre
             baobab
+            font-manager
             # Social media stuff
             signal-desktop
             telegram-desktop
