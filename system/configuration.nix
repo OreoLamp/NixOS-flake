@@ -218,7 +218,15 @@
         hinting.style = "full";
         subpixel.rgba = "rgb";
         allowBitmaps = false;
+        # Creates a directory with links to all fonts
+        # Path: /run/current-system/sw/share/X11/fonts
+        fontDir.enable = true;
         # Font preferences (TODO)
+        #defaultFonts = {
+        #    monospace = [
+        #        "JetBrains Mono NL Regular"
+        #    ];
+        #};
     };
 
     # Font packages (oh god there's so many)
