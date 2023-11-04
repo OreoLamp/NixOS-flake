@@ -144,6 +144,8 @@
 	        # Basic utilities
             neofetch
             piper
+            kitty
+            cliphist
             # Editors
             libsForQt5.okular
             inkscape
