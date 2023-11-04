@@ -241,7 +241,7 @@
         roboto
         source-sans
         source-serif
-        ubuntu-font-family
+        ubuntu_font_family # Wtf underscores???
     ];
 
     # Git config
