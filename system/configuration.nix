@@ -141,14 +141,32 @@
 
         # User packages
         packages = with pkgs; ([
-            cliphist
-            kitty
-            gimp
+	        # Basic utilities
+            neofetch
+            piper
+            # Editors
             libsForQt5.okular
+            inkscape
+            gimp
+            audacity
+            obs-studio
+            zotero
+            qbittorrent
+            vscode.fhs
+            jetbrains-toolbox
+            # Not so basic utilities
+            gradience
+            peazip
+            mullvad-vpn
+            mpv
+            nomacs
+            calibre
+            baobab
+            # Social media stuff
+            signal-desktop
+            telegram-desktop
             spotify
             spotifywm
-            spotifyd
-            vscode.fhs
         ]) ++ (with pkgs.gnome; [
             nautilus
             gnome-tweaks
@@ -246,6 +264,13 @@
 
     # Enables cliphist
     hm.services.cliphist.enable = true;
+
+    # Kitty config
+    programs.kitty = {
+        enable = true;
+        shellIntegration.enableZshIntegration = true;
+        theme = "Tokyo Night";
+    };
 
     # Firefox enablement
     programs.firefox.enable = true; 
