@@ -223,18 +223,18 @@
         subpixel.rgba = "rgb";
         allowBitmaps = false;
         # Font preferences
-        # defaultFonts = {
-        #     monospace = [
-        #         "JetBrainsMonoNL NerdFont"
-        #         "DejaVuSansM Nerd Font"
-        #         "NotoMono Nerd Font"
-        #         "Noto Sans Mono"
-        #     ];
-        #     sansSerif = [
-        #         "Inter"
-        #         "Noto Sans"
-        #     ];
-        # };
+        defaultFonts = {
+            monospace = [
+                "JetBrainsMonoNL NerdFont"
+                "DejaVuSansM Nerd Font"
+                "NotoMono Nerd Font"
+                "Noto Sans Mono"
+            ];
+            sansSerif = [
+                "Inter"
+                "Noto Sans"
+            ];
+        };
     };
 
     # Font packages (oh god there's so many)
@@ -242,6 +242,7 @@
         font-awesome
         helvetica-neue-lt-std
         julia-mono
+        nerdfonts
         # Then a massive list of fonts from google-fonts
         (google-fonts.override { fonts = [
             "Abhaya Libre"
