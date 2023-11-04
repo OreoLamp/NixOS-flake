@@ -235,7 +235,7 @@
         jetbrains-mono
         julia-mono
         lato
-        monsterrat
+        montserrat
         nerdfonts
         noto-fonts
         roboto
