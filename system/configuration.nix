@@ -222,12 +222,18 @@
         hinting.style = "full";
         subpixel.rgba = "rgb";
         allowBitmaps = false;
-        # Font preferences (TODO)
-        #defaultFonts = {
-        #    monospace = [
-        #        "JetBrains Mono NL Regular"
-        #    ];
-        #};
+        # Font preferences
+        defaultFonts = {
+            monospace = [
+                "JetBrainsMonoNL NerdFont"
+                "DejaVuSansM Nerd Font"
+                "NotoMono Nerd Font"
+                "Noto Sans Mono"
+            ];
+            sansSerif = [
+                "Noto Sans"
+            ];
+        };
     };
 
     # Font packages (oh god there's so many)
@@ -251,6 +257,7 @@
         source-sans
         source-serif
         ubuntu_font_family # Wtf underscores???
+        google-fonts # This is probably an awful idea lol
     ];
 
     # Git config
