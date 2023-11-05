@@ -102,6 +102,9 @@
         localuser = null;
     };
 
+    # Enables polkit
+    security.polkit.enable = true;
+
     # System-wide packages that I want always available
     environment.systemPackages = with pkgs; [
         # Basic packages that really should be standard
@@ -144,6 +147,9 @@
 	        # Basic utilities
             neofetch
             piper
+            mpv
+            nomacs
+            peazip
             # Editors
             libsForQt5.okular
             inkscape
@@ -155,10 +161,7 @@
             jetbrains-toolbox
             # Not so basic utilities
             gradience
-            peazip
             mullvad-vpn
-            mpv
-            nomacs
             calibre
             baobab
             font-manager
@@ -895,6 +898,54 @@
         gnome-tour
         orca
     ];
+
+    # GNOME your days are numbered
+    programs.sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+        extraPackages = with pkgs; [
+            tofi
+            wayshot
+            hyprpicker
+        ];
+    };
+    # Enables openGL
+    hardware.opengl.enable = true;
+
+    # Home-manager sway config
+    hm.wayland.windowManager.sway = {
+        enable = true;
+        config = {
+            # Keyboard layout
+            inputs = {
+                "type:keyboard" = {
+                    xkb_layout = "fi";
+                    xkb_model = "pc105";
+                };
+            };
+            # Keybindings
+            keybindings = 
+                let mod = config.wayland.windowManager.sway.config.modifier;
+                in lib.mkOptionDefault {
+                    "${mod}+Shift+s" = ''exec hyprpicker -r -z | wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png''
+                };
+            # Font settings
+            fonts = {
+                names = [ "Blinker" "Noto Sans" "Font Awesome 6 Free" "Font Awesome 6 Brands" ];
+                style = "Regular";
+                size = 12.0;
+            };
+            # Various other settings
+            terminal = "kitty";
+            menu = "tofi-run | xargs swaymsg exec --";
+            # Set background color to black so my eyes don't get blasted out
+            # Should only be used if an app doesn't fill the entire window
+            colors.background = "#000000";
+            # Remove titlebars
+            window.titlebar = false;
+            floating.titlebar = false;
+        };
+    };
 
     # Enables gnome-keyring and seahorse
     security.pam.services.eero.enableGnomeKeyring = true;
