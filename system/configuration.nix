@@ -165,6 +165,8 @@
             calibre
             baobab
             font-manager
+            wev
+            wlr-randr
             # Social media stuff
             signal-desktop
             telegram-desktop
