@@ -925,7 +925,6 @@
         extraPackages = with pkgs; [
             tofi
             wayshot
-            hyprpicker
             slurp
         ];
     };
@@ -946,12 +945,23 @@
                     xkb_model = "pc105";
                 };
             };
+            # Monitor config
+            output = {
+                HDMI-A-1 = {
+                    mode = "1920x1080@60Hz";
+                    position = "0,360";
+                };
+                DP-1 = {
+                    mode = "2560x1440@143.912Hz";
+                    position = "1920,0"
+                }
+            };
             # Keybindings
             modifier = "Mod4";
             keybindings = 
                 let mod = config.hm.wayland.windowManager.sway.config.modifier;
                 in lib.mkOptionDefault {
-                    "${mod}+Shift+s" = ''exec hyprpicker -r -z ; sleep 1; wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
+                    "${mod}+Shift+s" = ''exec wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
                 };
             # Font settings
             fonts = {
