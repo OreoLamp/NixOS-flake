@@ -901,7 +901,7 @@
         enable = true;
         wlr.enable = true;
         xdgOpenUsePortal = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ]
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
     
     
