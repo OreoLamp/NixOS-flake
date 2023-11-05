@@ -946,10 +946,11 @@
                 };
             };
             # Keybindings
+            modifier = "Mod4";
             keybindings = 
                 let mod = config.wayland.windowManager.sway.config.modifier;
                 in lib.mkOptionDefault {
-                    "Mod1+Shift+s" = ''exec hyprpicker -r -z | wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
+                    "${mod}+Shift+s" = ''exec hyprpicker -r -z ; sleep 0.01; wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
                 };
             # Font settings
             fonts = {
