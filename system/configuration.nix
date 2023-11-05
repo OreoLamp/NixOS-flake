@@ -911,9 +911,9 @@
     };
 
     # Enables openGL
-    hardware.opengl.enable = true;
+    # hardware.opengl.enable = true;
     # Enables xwayland
-    programs.xwayland.enable = true;
+    # programs.xwayland.enable = true;
 
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
