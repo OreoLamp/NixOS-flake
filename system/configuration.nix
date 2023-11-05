@@ -857,6 +857,23 @@
         ";
     };
 
+    # Btop user config
+    hm.programs.btop = {
+        enable = true;
+        settings = {
+            color_theme = "tokyo-night";
+            update_ms = 1000;
+            proc_sorting = "memory";
+            proc_cpu_graphs = false;
+            proc_filter_kernel = true;
+            cpu_graph_lower = "idle";
+            swap_disk = false;
+            disk_free_priv = true;
+            show_io_stat = true;
+            io_mode = true;
+        };
+    };
+
     # Enables cliphist
     hm.services.cliphist.enable = true;
 
@@ -911,9 +928,9 @@
     };
 
     # Enables openGL
-    # hardware.opengl.enable = true;
+    hardware.opengl.enable = true;
     # Enables xwayland
-    # programs.xwayland.enable = true;
+    programs.xwayland.enable = true;
 
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
