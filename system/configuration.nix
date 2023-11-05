@@ -917,7 +917,7 @@
         enable = true;
         config = {
             # Keyboard layout
-            inputs = {
+            input = {
                 "type:keyboard" = {
                     xkb_layout = "fi";
                     xkb_model = "pc105";
