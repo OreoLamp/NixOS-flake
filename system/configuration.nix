@@ -933,7 +933,14 @@
     hardware.opengl.enable = true;
     # Enables xwayland
     programs.xwayland.enable = true;
-
+    # Enables xdg portals and makes them work properly
+    xdg.portal = {
+        enable = true;
+        wlr.enable = true;
+        xdgOpenUsePortal = true;
+    };
+    
+    
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
         enable = true;
