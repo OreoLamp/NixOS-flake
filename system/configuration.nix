@@ -913,7 +913,7 @@
     # Enables openGL
     hardware.opengl.enable = true;
     # Enables xwayland
-    # programs.xwayland.enable = true;
+    programs.xwayland.enable = true;
 
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
@@ -928,7 +928,7 @@
             };
             # Keybindings
             keybindings = 
-                let mod = builtins.trace config.wayland config.wayland.windowManager.sway.config.modifier;
+                let mod = config.wayland.windowManager.sway.config.modifier;
                 in lib.mkOptionDefault {
                     "Mod1+Shift+s" = ''exec hyprpicker -r -z | wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
                 };
