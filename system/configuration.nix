@@ -892,9 +892,6 @@
         ];
     };
 
-    # Still need a display manager tho
-    services.xserver.displayManager.gdm.enable = true;
-
     # Enables openGL
     hardware.opengl.enable = true;
     # Enables xwayland
@@ -904,6 +901,7 @@
         enable = true;
         wlr.enable = true;
         xdgOpenUsePortal = true;
+        extraPortals = [ pkgs.xdg-desktop-portal-gtk ]
     };
     
     
