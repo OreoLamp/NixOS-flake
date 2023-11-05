@@ -953,7 +953,7 @@
                 };
                 DP-1 = {
                     mode = "2560x1440@143.912Hz";
-                    position = "1920,0"
+                    position = "1920,0";
                 };
             };
             # Keybindings
