@@ -216,23 +216,38 @@
     # Font config (oh god help me)
     # Creates a directory with links to all fonts
     # Path: /run/current-system/sw/share/X11/fonts
+    fonts.enableDefaultPackages = true;
+    fonts.enableGhostscriptFonts = true;
     fonts.fontDir.enable = true;
+    fonts.fontDir.decompressFonts = true;
     fonts.fontconfig = {
         # Hinting options
         hinting.style = "full";
         subpixel.rgba = "rgb";
         allowBitmaps = false;
-        # Font preferences
+        allowType1 = false;
+        localConf = "
+            <!-- Use Blinker as the default system UI font, with a fallback to Noto Sans UI -->
+            <alias>
+                <family>system-ui</family>
+                <prefer>
+                    <family>Blinker</family>
+                    <family>Noto Sans UI</family>
+                </prefer>
+            </alias>
+        ";
+        # Font preferences, these have lower priority than localConf
+        # Here mostly as a fallback in case i fuck up something
         defaultFonts = {
             monospace = [
                 "JetBrainsMonoNL NerdFont"
-                "DejaVuSansM Nerd Font"
-                "NotoMono Nerd Font"
                 "Noto Sans Mono"
             ];
             sansSerif = [
-                "Inter"
                 "Noto Sans"
+            ];
+            serif = [
+                "Noto Serif"
             ];
         };
     };
