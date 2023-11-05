@@ -172,21 +172,6 @@
             telegram-desktop
             spotify
             spotifywm
-        ]) ++ (with pkgs.gnome; [
-            nautilus
-            gnome-tweaks
-            gnome-shell-extensions
-            dconf-editor
-        ]) ++ (with pkgs.gnomeExtensions; [
-            user-themes
-            app-hider
-            dash-to-panel
-            appindicator
-            blur-my-shell
-            just-perfection
-            gnome-40-ui-improvements
-            unite
-            quake-mode
         ]);
     };
 
@@ -894,31 +879,9 @@
     # ========================== #
     # Desktop environment config #
     # ========================== #
-    
 
-    # For some reason GNOME requires xserver config stuff even on wayland
-    services.xserver = {
-        # Required even on wayland (bruh)
-        enable = true;
 
-        # Enables GNOME and gdm (the locks screen)
-        displayManager.gdm.enable = true;
-        desktopManager.gnome.enable = true;
-
-        # Yeets xterm
-        excludePackages = with pkgs; [ xterm ];
-    };
-
-    # Removes gnome core utilities, I want almost none of them
-    services.gnome.core-utilities.enable = false;
-
-    # Yeets gnome-tour
-    environment.gnome.excludePackages = with pkgs; [ 
-        gnome-tour
-        orca
-    ];
-
-    # GNOME your days are numbered
+    # GNOME? More like GONE
     programs.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
@@ -928,6 +891,9 @@
             slurp
         ];
     };
+
+    # Still need a display manager tho
+    services.xserver.displayManager.gdm.enable = true;
 
     # Enables openGL
     hardware.opengl.enable = true;
