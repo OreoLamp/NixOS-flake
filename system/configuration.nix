@@ -926,6 +926,7 @@
             tofi
             wayshot
             hyprpicker
+            slurp
         ];
     };
 
