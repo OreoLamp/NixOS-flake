@@ -144,35 +144,40 @@
 
         # User packages
         packages = with pkgs; ([
-	        # Basic utilities
-            neofetch
-            piper
-            mpv
-            nomacs
-            peazip
-            firefox
-            # Editors
-            libsForQt5.okular
-            inkscape
-            gimp
-            audacity
-            obs-studio
-            qbittorrent
-            vscode.fhs
-            jetbrains-toolbox
-            # Not so basic utilities
-            gradience
-            mullvad-vpn
-            calibre
-            baobab
-            font-manager
-            wev
-            wlr-randr
-            # Social media stuff
-            signal-desktop
-            telegram-desktop
-            spotify
-            spotifywm
+            neofetch # System state thing?
+            piper # Logitech mouse config
+            mpv # Video player
+            nomacs # Image viewer with a GUI
+            peazip # Archive extractor with a GUI
+            firefox # Web browser
+            libsForQt5.okular # PDF / other document viewer
+            inkscape # Vector graphics editor
+            gimp # Image editor
+            audacity # Audio / waveform toolbox
+            obs-studio # Screen recording
+            qbittorrent # Torrents
+            vscode.fhs # Code editor
+            jetbrains-toolbox # More code editors
+            gradience # Adwaita theme generator
+            mullvad-vpn # VPN
+            calibre # e-book library
+            baobab # Disk space utility
+            font-manager # Exactly what the name suggests
+            signal-desktop # End to end encrypted messaging platform
+            telegram-desktop # Another messaging platform, used for student stuff
+            spotify # Music player of choice
+            spotifywm # Set spotify window name properly
+            spotfyd # Spotify daemon
+            glib # I think this fixes flatpak mime issues
+            tofi # Launcher / app menu
+            swaylock # Lock screen
+            wl-clipboard # Clipboard (duh)
+            wayshot # Screenshot tool, faster than grim
+            slurp # Select area from screen for wayshot
+            cliphist # Clipboard history
+            imv # Super light image viewer
+            wev # Wayland event viewer, for debugging hyprland mostly
+            wlr-randr # Check monitor shit on wayland
         ]);
     };
 
@@ -879,17 +884,6 @@
     programs.sway = {
         enable = true;
         wrapperFeatures.gtk = true;
-        extraPackages = with pkgs; [
-            # Bars / launchers
-            tofi
-            # Clipboard stuff
-            wl-clipboard
-            wayshot
-            slurp
-            cliphist
-            # Images
-            imv
-        ];
     };
 
     # Enables openGL
@@ -902,7 +896,6 @@
     xdg.portal = {
         enable = true;
         wlr.enable = true;
-        # xdgOpenUsePortal = true;
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
