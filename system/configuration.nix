@@ -902,22 +902,12 @@
     xdg.portal = {
         enable = true;
         wlr.enable = true;
-        xdgOpenUsePortal = true;
+        # xdgOpenUsePortal = true;
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
     # TODO: xdg mime apps
     xdg.mime.enable = true;
-    hm.xdg.mimeApps = {
-        enable = true;
-        defaultApplications = {
-            # URLs and other stuff that should be opened in firefox
-            "x-scheme-handler/http" = "firefox.desktop";
-            "x-scheme-handler/https" = "firefox.desktop";
-            "application/xhtml+xml" = "firefox.desktop";
-            "application/vnd.mozilla.xul+xml" = "firefox.desktop";
-        };
-    };
     
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
