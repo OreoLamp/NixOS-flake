@@ -167,7 +167,7 @@
             telegram-desktop # Another messaging platform, used for student stuff
             spotify # Music player of choice
             spotifywm # Set spotify window name properly
-            spotfyd # Spotify daemon
+            spotifyd # Spotify daemon
             glib # I think this fixes flatpak mime issues
             tofi # Launcher / app menu
             swaylock # Lock screen
