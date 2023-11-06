@@ -234,6 +234,9 @@
         };
     };
 
+    # Enables cliphist for clipboard "management"
+    hm.services.cliphist.enable = true;
+
     # Font packages (oh god there's so many)
     fonts.packages = with pkgs; [
         font-awesome
@@ -853,9 +856,6 @@
         };
     };
 
-    # Enables cliphist
-    hm.services.cliphist.enable = true;
-
     # Kitty config
     hm.programs.kitty = {
         enable = true;
@@ -949,9 +949,6 @@
             floating.titlebar = false;
         };
     };
-
-    # Clipboard enablement
-    hm.services.cliphist.enable = true;
 
     # Enables gnome-keyring and seahorse
     security.pam.services.eero.enableGnomeKeyring = true;
