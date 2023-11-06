@@ -150,6 +150,7 @@
             mpv
             nomacs
             peazip
+            firefox
             # Editors
             libsForQt5.okular
             inkscape
@@ -861,7 +862,6 @@
     };
 
     # Firefox enablement
-    programs.firefox.enable = true; 
     hm.programs.firefox.enable = true;
 
 
@@ -880,10 +880,15 @@
         enable = true;
         wrapperFeatures.gtk = true;
         extraPackages = with pkgs; [
+            # Bars / launchers
             tofi
+            # Clipboard stuff
+            wl-clipboard
             wayshot
             slurp
             cliphist
+            # Image stuff
+            imv
         ];
     };
 
@@ -891,14 +896,49 @@
     hardware.opengl.enable = true;
     # Enables xwayland
     programs.xwayland.enable = true;
-    # Enables xdg portals and makes them work properly
+
+    # Enables xdg portals, even for flatpaks!
+    xdg.menus.enable = true;
     xdg.portal = {
         enable = true;
         wlr.enable = true;
         xdgOpenUsePortal = true;
         extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
-    
+
+    # TODO: xdg mime apps
+    hm.xdg.mimeApps = {
+        enable = true;
+        defaultApplications = {
+            # URLs and other stuff that should be opened in firefox
+            "x-scheme-handler/http" = "firefox.desktop";
+            "x-scheme-handler/https" = "firefox.desktop";
+            "application/xhtml+xml" = "firefox.desktop";
+            "application/vnd.mozilla.xul+xml" = "firefox.desktop";
+
+            # Images
+            "image/bmp;" = "imv.desktop";
+            "image/gif;" = "imv.desktop";
+            "image/jpeg;" = "imv.desktop";
+            "image/jpg;" = "imv.desktop";
+            "image/pjpeg;" = "imv.desktop";
+            "image/png;" = "imv.desktop";
+            "image/tiff;" = "imv.desktop";
+            "image/x-bmp;" = "imv.desktop";
+            "image/x-pcx;" = "imv.desktop";
+            "image/x-png;" = "imv.desktop";
+            "image/x-portable-anymap;" = "imv.desktop";
+            "image/x-portable-bitmap;" = "imv.desktop";
+            "image/x-portable-graymap;" = "imv.desktop";
+            "image/x-portable-pixmap;" = "imv.desktop";
+            "image/x-tga;" = "imv.desktop";
+            "image/x-xbitmap;" = "imv.desktop";
+            "image/heif" = "imv.desktop";
+
+            # Videos and stuff like that
+            
+        };
+    };
     
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
