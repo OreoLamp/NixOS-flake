@@ -907,7 +907,8 @@
     };
 
     # TODO: xdg mime apps
-    xdg.mime = {
+    xdg.mime.enable = true;
+    hm.xdg.mimeApps = {
         enable = true;
         defaultApplications = {
             # URLs and other stuff that should be opened in firefox
