@@ -195,14 +195,6 @@
     # Restart systemd user services when switching configs
     hm.systemd.user.startServices = "sd-switch";
 
-    # Yeets the desktop entry for the nix manual
-    hm.xdg.desktopEntries = {
-        nixos-manual = {
-            name = "NixOS Manual";
-            noDisplay = true;
-        };
-    };
-
     # Font config (oh god help me)
     # Creates a directory with links to all fonts
     # Path: /run/current-system/sw/share/X11/fonts
@@ -880,6 +872,11 @@
     # Desktop environment config #
     # ========================== #
 
+    # Login screen (AKA display manager, for some reason)
+    # programs.regreet.enable = true;
+    # services.greetd = {
+    #     enable = true;
+    # };
 
     # GNOME? More like GONE
     programs.sway = {
@@ -889,6 +886,7 @@
             tofi
             wayshot
             slurp
+            cliphist
         ];
     };
 
@@ -951,6 +949,9 @@
             floating.titlebar = false;
         };
     };
+
+    # Clipboard enablement
+    hm.services.cliphist.enable = true;
 
     # Enables gnome-keyring and seahorse
     security.pam.services.eero.enableGnomeKeyring = true;
