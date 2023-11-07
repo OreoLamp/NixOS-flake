@@ -963,12 +963,11 @@
     programs.seahorse.enable = true;
 
     # gpg setup
-    hm = {
-        programs.gpg.enable = true;
-        programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
-        services.gpg-agent.enable = true;
-        services.gpg-agent.pinentryFlavor = "gnome3";
-    };
+    
+    hm.programs.gpg.enable = true;
+    hm.programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
+    hm.services.gpg-agent.enable = true;
+    hm.services.gpg-agent.pinentryFlavor = "gnome3";
 
     # Config for gtk and qt
     gtk.iconCache.enable = true;
