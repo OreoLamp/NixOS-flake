@@ -179,6 +179,7 @@
             wev # Wayland event viewer, for debugging hyprland mostly
             wlr-randr # Check monitor shit on wayland
             gnupg # For some reason have to manually specify this???
+            libsecret # Required for vscode gpg integration
         ]);
     };
 
