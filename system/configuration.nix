@@ -1,5 +1,5 @@
 {
-    config, 
+    config,
     pkgs,
     lib,
     inputs,
@@ -9,7 +9,7 @@
 {
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
-    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # on your system were taken. It's perfectly fine and recommended to leave
     # this value at the release version of the first install of this system.
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
@@ -18,8 +18,8 @@
     # Allow non-FOSS packages
     nixpkgs.config.allowUnfree = true;
 
-    # Enable nix-command
-    nix.settings.experimental-features = [ "nix-command" ];
+    # Enable nix-command and flakes
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     imports = [ 
         # Add an alias "hm" for "home-manager.users.eero"
@@ -156,7 +156,6 @@
             audacity # Audio / waveform toolbox
             obs-studio # Screen recording
             qbittorrent # Torrents
-            vscode.fhs # Code editor
             jetbrains-toolbox # More code editors
             gradience # Adwaita theme generator
             mullvad-vpn # VPN
@@ -170,6 +169,7 @@
             spotifyd # Spotify daemon
             glib # I think this fixes flatpak mime issues
             tofi # Launcher / app menu
+            eww-wayland # Widgets
             swaylock # Lock screen
             wl-clipboard # Clipboard (duh)
             wayshot # Screenshot tool, faster than grim
@@ -180,6 +180,8 @@
             wlr-randr # Check monitor shit on wayland
             gnupg # For some reason have to manually specify this???
             libsecret # Required for vscode gpg integration
+            atuin # Best shell history
+            vscode.fhm
         ]);
     };
 
@@ -849,6 +851,14 @@
         };
     };
 
+    # Atuin stuff
+    hm.programs.atuin = {
+        enable = true;
+        settings = {
+            style = "compact";
+        };
+    };
+
     # Btop user config
     hm.programs.btop = {
         enable = true;
@@ -875,7 +885,6 @@
 
     # Firefox enablement
     hm.programs.firefox.enable = true;
-
 
     # ========================== #
     # Desktop environment config #
