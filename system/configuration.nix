@@ -963,7 +963,6 @@
     programs.seahorse.enable = true;
 
     # gpg setup
-    
     hm.programs.gpg.enable = true;
     hm.programs.gpg.homedir = "${config.hm.xdg.dataHome}/gnupg";
     hm.services.gpg-agent.enable = true;
