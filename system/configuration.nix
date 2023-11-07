@@ -181,7 +181,7 @@
             gnupg # For some reason have to manually specify this???
             libsecret # Required for vscode gpg integration
             atuin # Best shell history
-            vscode.fhm
+            vscode-fhm
         ]);
     };
 
