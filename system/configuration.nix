@@ -178,6 +178,7 @@
             imv # Super light image viewer
             wev # Wayland event viewer, for debugging hyprland mostly
             wlr-randr # Check monitor shit on wayland
+            gnupg # For some reason have to manually specify this???
         ]);
     };
 
@@ -840,6 +841,11 @@
             setopt HIST_VERIFY
             setopt INC_APPEND_HISTORY_TIME
         ";
+        
+        # Aliases (duh)
+        shellAliases = {
+            sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix#desktop-nix";
+        };
     };
 
     # Btop user config
@@ -896,7 +902,6 @@
     xdg.portal = {
         enable = true;
         wlr.enable = true;
-        extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     };
 
     # TODO: xdg mime apps
@@ -956,6 +961,14 @@
     security.pam.services.eero.enableGnomeKeyring = true;
     services.gnome.gnome-keyring.enable = true;
     programs.seahorse.enable = true;
+
+    # gpg setup
+    hm = {
+        programs.gpg.enable = true;
+        programs.gpg.homedir = "${config.xdg.dataHome}/gnupg";
+        services.gpg-agent.enable = true;
+        services.gpg-agent.pinentryFlavor = "gnome3";
+    };
 
     # Config for gtk and qt
     gtk.iconCache.enable = true;
