@@ -1083,7 +1083,7 @@
             vscjava.vscode-java-pack
             vscjava.vscode-java-test
             vscjava.vscode-maven
-        ]
+        ];
     };
 
     # Config for gtk and qt
