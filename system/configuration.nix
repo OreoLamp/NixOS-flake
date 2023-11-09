@@ -1,4 +1,4 @@
-inputs @ {
+{
     config,
     pkgs,
     lib,
@@ -6,7 +6,7 @@ inputs @ {
     outputs,
     nix-vscode-extensions,
     ... 
-}: builtins.trace (builtins.attrNames inputs)
+}: 
 {
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -183,7 +183,7 @@ inputs @ {
             gnupg # For some reason have to manually specify this???
             libsecret # Required for vscode gpg integration
             atuin # Best shell history
-            vscode # vscode (duh)
+            vscode # vscode lol
         ]);
     };
 
@@ -988,8 +988,8 @@ inputs @ {
     # vscode config
     hm.programs.vscode = {
         enable = true;
-        extensions = with nix-vscode-extensions.vscode-marketplace-release; [
-            13xforever.language-x86-64-assembly
+        package = pkgs.vscode; 
+        extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
             alefragnani.bookmarks
             alefragnani.project-manager
             antiantisepticeye.vscode-color-picker
