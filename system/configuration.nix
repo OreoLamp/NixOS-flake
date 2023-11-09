@@ -1,4 +1,4 @@
-{
+inputs @ {
     config,
     pkgs,
     lib,
@@ -6,7 +6,7 @@
     outputs,
     nix-vscode-extensions,
     ... 
-}:
+}: builtins.trace (builtins.attrNames inputs)
 {
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -137,6 +137,7 @@
     # =========== #
     # User config #
     # =========== #
+
 
     users.users.eero = {
         isNormalUser = true;
