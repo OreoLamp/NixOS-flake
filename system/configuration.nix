@@ -145,7 +145,7 @@
 
     # Mount unit for said automount
     systemd.mounts = [{
-        automountConfig = {
+        mountConfig = {
             DirectoryMode = "0775";
         };
         description = "2tbSSD mount";
