@@ -989,8 +989,10 @@
     hm.programs.vscode = {
         enable = true;
         package = pkgs.vscode; 
-        extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
-            "13xforever".language-x86-64-assembly
+        extensions = let
+            inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}) vscode-marketplace;
+        in with vscode-marketplace; [
+            vscode-marketplace."13xforever".language-x86-64-assembly
             alefragnani.bookmarks
             alefragnani.project-manager
             antiantisepticeye.vscode-color-picker
