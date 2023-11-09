@@ -990,6 +990,7 @@
         enable = true;
         package = pkgs.vscode; 
         extensions = with inputs.nix-vscode-extensions.extensions.x86_64-linux.vscode-marketplace; [
+            "13xforever".language-x86-64-assembly
             alefragnani.bookmarks
             alefragnani.project-manager
             antiantisepticeye.vscode-color-picker
@@ -1055,7 +1056,7 @@
             ms-vscode-remote.vscode-remote-extensionpack
             ms-vscode.vscode-github-issue-notebooks
             ms-vscode.vscode-selfhost-test-provider
-            ms-vscode.vscode-serial-monitor
+            # ms-vscode.vscode-serial-monitor
             njpwerner.autodocstring
             pkief.material-icon-theme
             pkief.material-product-icons
