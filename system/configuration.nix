@@ -138,7 +138,17 @@
         automountConfig = {
             DirectoryMode = "0775";
         };
-        description = "Mounts the 2tb SSD";
+        description = "2tbSSD";
+        wants = [ "multi-user.target" ];
+        where = "/media/2tbSSD";
+    }];
+
+    # Mount unit for said automount
+    systemd.mounts = [{
+        automountConfig = {
+            DirectoryMode = "0775";
+        };
+        description = "2tbSSD mount";
         wants = [ "multi-user.target" ];
         where = "/media/2tbSSD";
     }];
