@@ -58,6 +58,9 @@
         device = "nodev";
     };
 
+    # Add support for ntfs drives (for some reason has to be added separately)
+    boot.supportedFilesystems = [ "ntfs" ];
+
 
     # =============================== #
     # System-wide basic configuration #
