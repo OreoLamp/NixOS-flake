@@ -150,6 +150,7 @@
         };
         description = "2tbSSD mount";
         wants = [ "multi-user.target" ];
+        what = "/dev/disk/by-uuid/588A45CD8A45A878";
         where = "/media/2tbSSD";
     }];
 
