@@ -134,7 +134,7 @@
     };
 
     # Systemd automount unit for second disk
-    systemd.automounts.mount-2tbSSD = {
+    systemd.automounts.[mount-2tbSSD] = {
         automountConfig = {
             DirectoryMode = "0775";
         };
