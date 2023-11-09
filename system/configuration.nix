@@ -136,7 +136,7 @@
     # Systemd automount unit for second disk
     systemd.automounts.mount-2tbSSD = {
         automountConfig = {
-            DirectoryMode = "0775"
+            DirectoryMode = "0775";
         };
         description = "Mounts the 2tb SSD";
         wants = [ "multi-user.target" ];
