@@ -140,7 +140,7 @@
     systemd.mounts = [{
         mountConfig = { DirectoryMode = "0755"; };
         description = "2tbSSD mount";
-        options = "nofail,atime,exec,X-mount.owner=eero,X-mount.group=users";
+        options = "nofail,atime,exec,windows_names,remove_hiberfile,big_writes,uid=1000,gid=100,dmask=022,fmask=133,";
         after = [ "default.target" ];
         wantedBy = [ "default.target"];
         type = "ntfs-3g";
