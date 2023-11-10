@@ -58,8 +58,7 @@
       # Hostname
       desktop-nix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        
-	modules = [
+        modules = [
           # Main config file
           ./system/configuration.nix
         ];
