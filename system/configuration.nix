@@ -272,7 +272,12 @@
         nerdfonts
         # Then a massive list of fonts from google-fonts
         (google-fonts.overrideAttrs {
-            installPhase = ''find . -name METADATA.pb -exec bash -c "META=\"{}\"; FOO=\"cat \$META | sed -n '/style: /p' | wc -l;\"; STYLES=\$(eval \$FOO); if [ \$STYLES -ge 4 ]; then dirname \"\$META\" | xargs -r -I % 'find % -name *.ttf -exec install -m 444 -Dt $dest \'{}\' ' fi " \;'';
+            installPhase = ''
+            adobeBlankDest=$adobeBlank/share/fonts/truetype
+            install -m 444 -Dt $adobeBlankDest ofl/adobeblank/AdobeBlank-Regular.ttf
+            rm -r ofl/adobeblank
+            dest=$out/share/fonts/truetype
+            find . -name METADATA.pb -exec bash -c "META=\"{}\"; FOO=\"cat \$META | sed -n '/style: /p' | wc -l;\"; STYLES=\$(eval \$FOO); if [ \$STYLES -ge 4 ]; then dirname \"\$META\" | xargs -r -I % find % -name *.ttf -exec install -m 444 -Dt $dest \{\} \; ; fi " \;'';
         } )
     ];
 
