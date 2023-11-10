@@ -140,7 +140,7 @@
     systemd.mounts = [{
         mountConfig = { DirectoryMode = "0755"; };
         description = "2tbSSD mount";
-        options = [ "nofail" ];
+        options = "nofail";
         after = [ "default.target" ];
         wantedBy = [ "default.target"];
         type = "ntfs-3g";
