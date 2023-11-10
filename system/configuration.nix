@@ -199,6 +199,7 @@
             libsecret # Required for vscode gpg integration
             atuin # Best shell history
             vscode # vscode lol
+            nil # nix language server
         ]);
     };
 
