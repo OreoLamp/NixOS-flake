@@ -136,23 +136,14 @@
         vimAlias = true;
     };
 
-    # Systemd automount unit for second disk
-    systemd.automounts = [{
-        automountConfig = {
-            DirectoryMode = "0775";
-        };
-        description = "2tbSSD";
-        wants = [ "multi-user.target" ];
-        where = "/media/2tbSSD";
-    }];
-
-    # Mount unit for said automount
+    # Systemd mount unit for 2tb SSD
     systemd.mounts = [{
-        mountConfig = {
-            DirectoryMode = "0775";
-        };
+        mountConfig = { DirectoryMode = "0755"; };
         description = "2tbSSD mount";
-        wants = [ "multi-user.target" ];
+        options = [ "nofail" ];
+        after = [ "default.target" ];
+        wantedBy = [ "default.target"];
+        type = "ntfs-3g";
         what = "/dev/disk/by-uuid/588A45CD8A45A878";
         where = "/media/2tbSSD";
     }];
