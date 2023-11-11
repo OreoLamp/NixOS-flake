@@ -43,11 +43,4 @@
         # Generic desktop config stuff
         ./desktop.nix
     ];
-
-    # Firefox enablement
-    # Login screen (AKA display manager, for some reason)
-    # programs.regreet.enable = true;
-    # services.greetd = {
-    #     enable = true;
-    # };
 }
