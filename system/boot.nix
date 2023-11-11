@@ -27,10 +27,9 @@
                 # Makes grub not display the menu unless shift is held down
                 timeoutStyle = "hidden";
             };
-            
-            # Boots immediately to the selected boot option, without displaying menu
-            # Only boots immediately when shift isn't held during the boot process
-            timeout = 0;
+
+            # Boot menu time
+            timeout = 2;
         };
 
         # Enables NTFS support for mounting
