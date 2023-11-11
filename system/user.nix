@@ -1,20 +1,20 @@
 { pkgs, inputs, outputs, ... }:
 {
     imports = [
-        # Shell config
+        # Shell
         ./shell.nix
 
-        # Git config
-        ./git.nix
-
-        # Sway config
+        # Sway
         ./sway.nix
 
-        # VSCode config
+        # VSCode
         ./vscode.nix
 
         # Security stuff
         ./security.nix
+
+        # Random tools and programs
+        ./misc-programs.nix
     ];
 
     # Makes zsh the default user shell

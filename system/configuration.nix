@@ -47,30 +47,6 @@
     # Enables cliphist for clipboard "management"
     hm.services.cliphist.enable = true;
 
-    # Btop user config
-    hm.programs.btop = {
-        enable = true;
-        settings = {
-            color_theme = "tokyo-night";
-            update_ms = 1000;
-            proc_sorting = "memory";
-            proc_cpu_graphs = false;
-            proc_filter_kernel = true;
-            cpu_graph_lower = "idle";
-            swap_disk = false;
-            disk_free_priv = true;
-            show_io_stat = true;
-            io_mode = true;
-        };
-    };
-
-    # Kitty config
-    hm.programs.kitty = {
-        enable = true;
-        shellIntegration.enableZshIntegration = true;
-        theme = "Tokyo Night";
-    };
-
     # Firefox enablement
     # Login screen (AKA display manager, for some reason)
     # programs.regreet.enable = true;
