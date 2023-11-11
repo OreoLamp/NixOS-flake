@@ -44,9 +44,6 @@
         ./desktop.nix
     ];
 
-    # Enables cliphist for clipboard "management"
-    hm.services.cliphist.enable = true;
-
     # Firefox enablement
     # Login screen (AKA display manager, for some reason)
     # programs.regreet.enable = true;

@@ -1,5 +1,9 @@
 { pkgs, inputs, ... }:
 {
+    users.users.eero.packages = with pkgs; [
+        vscode
+    ];
+    
     # vscode config
     hm.programs.vscode = {
         enable = true;

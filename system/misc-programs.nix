@@ -1,4 +1,44 @@
+{ pkgs, ...}:
 {
+    users.users.eero.packages = with pkgs; [
+        neofetch
+        piper
+        mpv
+        imv
+        nomacs
+        peazip
+        firefox
+        libsForQt5.okular
+        inkscape
+        gimp
+        audacity
+        obs-studio
+        qbittorrent
+        mullvad-vpn
+        bitwarden
+        calibre
+        signal-desktop
+        telegram-desktop
+        spotify
+        spotifywm
+        spotifyd # TODO: Config this
+        tofi
+        eww-wayland
+        swaylock
+        wayshot
+        slurp
+        wl-clipboard
+        cliphist
+        nil
+        shellcheck
+        thefuck
+        dasel
+        bat
+        lsd
+        fzf
+        ripgrep
+    ];
+
     # Git
     hm.programs.git = {
         enable = true;

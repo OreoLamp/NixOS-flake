@@ -1,5 +1,9 @@
 { pkgs, ...}:
 {
+    users.users.eero.packages = with pkgs; [
+        glib
+    ];
+
     # Enables xdg portals, even for flatpaks (hopefully)!
     xdg.menus.enable = true;
     xdg.portal = {
