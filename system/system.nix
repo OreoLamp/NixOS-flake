@@ -22,7 +22,7 @@
             LANG = "en_US.UTF-8";
             LANGUAGE = "en_US.UTF-8";
             LC_ADDRESS = "fi_FI.UTF-8";
-            LC_IDENTIFICATION = "fi_FI.UTF-8";
+            LC_IDENTIFICATION = "en_US.UTF-8";
             LC_MEASUREMENT = "fi_FI.UTF-8";
             LC_MONETARY = "fi_FI.UTF-8";
             LC_NAME = "fi_FI.UTF-8";
@@ -42,21 +42,10 @@
 
     # System-wide packages that I want always available
     environment.systemPackages = with pkgs; [
-        # Basic packages that really should be standard
-        file
-        strace
-        curl
-        pciutils
-        lshw
-        psmisc
+        # Basic utility packages
+        file lshw pciutils psmisc curl strace
         # Conveniences
-        du-dust
-        unar
-        btop
-        tmux
-        nnn
-        nvimpager
-        nix-tree
+        du-dust unar btop tmux nnn nvimpager nix-tree
     ];
 
     # System-wide neovim config

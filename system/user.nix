@@ -25,6 +25,10 @@
         description = "Eero Lampela";
         extraGroups = [ "networkmanager" "wheel" ];
 
+        # Enables lingering. Means systemd user units will start at boot, instead of
+        # starting at login and stopping at logout. Should make logging in a lot faster.
+        linger = true;
+
         # User packages
         packages = with pkgs; [
             jetbrains-toolbox # More code editors
