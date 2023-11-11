@@ -73,9 +73,67 @@
     };
 
     # Kitty
+    # TODO: Finish and split into a separate file
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
         theme = "Tokyo Night";
+        font.size = 12;
+        settings = {
+            # Font families
+            font_family = "JetBrainsMonoNL Nerd Font Light";
+            bold_font = "JetBrainsMonoNL Nerd Font SemiBold";
+            italic_font = "JetBrainsMonoNL Nerd Font Light Italic";
+            bold_italic_font = "JetBrainsMonoNL Nerd Font SemiBold Italic";
+
+            # Font size
+            font_size = 10;
+
+            # Enable ligatures by default
+            disable_ligatures = "never";
+
+            # Cursor color
+            cursor = "#FFCC00";
+
+            # Scrollback lines to keep in memory
+            scrollback_lines = 10000;
+
+            # TODO: Configure nvimpager to be used for scrollback pager
+            # scrolback_pager = "nvimpager --blah"
+
+            # Size of the scrollback buffer used for the pager
+            scrollback_pager_history_size = 4095;
+
+            # Hides mouse cursor immediately when starting to type
+            mouse_hide_wait = -1;
+
+            # Underline hyperlinks always to mark them
+            underline_hyperlinks = "always";
+
+            # Sanity checks for pasting stuff into the terminal
+            # Asks for confirmation if the text to be pasted contains terminal control characters
+            # or if the text to be pasted is very large (>16KB). Also quotes URLs.
+            paste_actions = "quote-urls-at-prompt,confirm,confirm-if-large";
+
+            # Makes focus follow the mouse
+            focus_follow_mouse = "true";
+
+            # Makes the repaint delay lower than the refresh rate of my monitor
+            repaint_delay = 5;
+
+            # Reduces input delay, might cause flicker in slow TUI programs
+            input_delay = 1;
+
+            # Disables terminal bell (bruh)
+            enable_audio_bell = "false";
+
+            # Make kitty not remember the window size (am using a tiler lol)
+            remember_window_size = "false";
+
+            # Fixes kitty window border width to 2 pixels. Note that this is not the OS window border.
+            window_border_width = "2px";
+
+            ...
+        };
     };
 }
