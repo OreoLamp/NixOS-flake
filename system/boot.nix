@@ -27,7 +27,7 @@
         description = "2tbSSD mount";
         options = "nofail,atime,exec,windows_names,remove_hiberfile,big_writes,uid=1000,gid=100,dmask=022,fmask=133,";
         after = [ "multi-user.target" ];
-        wantedBy = [ "multi-user.target.target"];
+        wantedBy = [ "multi-user.target"];
         type = "ntfs-3g";
         what = "/dev/disk/by-uuid/588A45CD8A45A878";
         where = "/media/2tbSSD";
