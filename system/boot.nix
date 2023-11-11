@@ -3,9 +3,6 @@
     boot = {
         # Bootloader config
         loader = {
-            # Makes the boot process able to touch EFI variables
-            efi.canTouchEfiVariables = true;
-
             # Where the EFI system partition is mounted
             efi.efiSysMountPoint = "/boot";
 
