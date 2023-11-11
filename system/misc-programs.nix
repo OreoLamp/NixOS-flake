@@ -37,6 +37,8 @@
         lsd
         fzf
         ripgrep
+        tldr
+        lsof
     ];
 
     # Git

@@ -19,4 +19,7 @@
 
     # Enables polkit
     security.polkit.enable = true;
+
+    # Enables rtkit
+    security.rtkit.enable = true;
 }

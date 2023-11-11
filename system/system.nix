@@ -57,9 +57,6 @@
         nnn
         nvimpager
         nix-tree
-
-        lsof
-        tldr
     ];
 
     # System-wide neovim config

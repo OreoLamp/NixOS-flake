@@ -35,4 +35,18 @@
     # Enables xwayland
     programs.xwayland.enable = true;
 
+    # Sound stuff
+    sound.enable = true;
+    hardware.pulseaudio.enable = false;
+    
+    # Pipewire settings
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        pulse.enable = true;
+        jack.enable = true;
+    };
+
+    # Enables printing via CUPS
+    services.printing.enable = true;
 }
