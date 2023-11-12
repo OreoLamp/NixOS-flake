@@ -83,13 +83,13 @@
         font.size = 12;
         settings = {
             # Font families
-            font_family = "JetBrainsMonoNL Nerd Font Light";
-            bold_font = "JetBrainsMonoNL Nerd Font SemiBold";
-            italic_font = "JetBrainsMonoNL Nerd Font Light Italic";
-            bold_italic_font = "JetBrainsMonoNL Nerd Font SemiBold Italic";
+            font_family = "JetBrainsMonoNL Nerd Font ExtraLight";
+            bold_font = "JetBrainsMonoNL Nerd Font Medium";
+            italic_font = "JetBrainsMonoNL Nerd Font ExtraLight Italic";
+            bold_italic_font = "JetBrainsMonoNL Nerd Font Medium Italic";
 
             # Font size
-            font_size = 10;
+            font_size = 12;
 
             # Enable ligatures by default
             disable_ligatures = "never";
