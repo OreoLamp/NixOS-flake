@@ -64,6 +64,14 @@
         cuetools
     ];
 
+    # Java
+    programs.java = {
+        enable = true;
+        
+        # Use java 21 by default
+        package = pkgs.temurin-bin-21;
+    };
+
     # Git
     hm.programs.git = {
         enable = true;
