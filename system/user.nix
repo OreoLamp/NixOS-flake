@@ -31,12 +31,8 @@
 
         # User packages
         packages = with pkgs; [
-            jetbrains-toolbox # More code editors
             gradience # Adwaita theme generator
-            baobab # Disk space utility
             font-manager # Exactly what the name suggests
-            wev # Wayland event viewer, for debugging hyprland mostly
-            wlr-randr # Check monitor shit on wayland
         ];
     };
 

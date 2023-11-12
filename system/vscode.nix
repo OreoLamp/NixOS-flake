@@ -19,7 +19,6 @@
             charliermarsh.ruff
             christian-kohler.path-intellisense
             cschlosser.doxdocgen
-            davidanson.vscode-markdownlint
             dbaeumer.vscode-eslint
             donjayamanne.python-environment-manager
             eamodio.gitlens
@@ -106,6 +105,7 @@
             vscjava.vscode-java-pack
             vscjava.vscode-java-test
             vscjava.vscode-maven
+            yzhang.markdown-all-in-one
         ];
     };
 }

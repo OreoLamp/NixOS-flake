@@ -30,8 +30,6 @@
         slurp
         wl-clipboard
         cliphist
-        nil
-        shellcheck
         thefuck
         dasel
         bat
@@ -40,6 +38,29 @@
         ripgrep
         tldr
         lsof
+        # Dependencies not installed automatically
+        # TODO: Figure out LLVM and GCC stuff
+        nil
+        shellcheck
+        temurin-bin-8
+        temurin-bin-11
+        temurin-bin-17
+        temurin-bin-21
+        go
+        ghc
+        haskell-language-server
+        julia
+        fortls
+        python310Full
+        python311Full
+        python312Full
+        python313Full
+        R
+        rPackages.languageserver
+        ruby-lsp
+        rust-analyzer
+        scala
+        scala_3
     ];
 
     # Git
@@ -74,13 +95,13 @@
     };
 
     # Kitty
-    # TODO: Set up cue to configure this properly
+    # TODO: Set up cue to configure this properly and just source the file
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
         theme = "Tokyo Night";
         font.name = "JetBrainsMonoNL Nerd Font Thin";
-        font.size = 12;
+        font.size = 11;
         settings = {
             # Font families
             font_family = "JetBrainsMonoNL Nerd Font ExtraLight";
@@ -89,7 +110,7 @@
             bold_italic_font = "JetBrainsMonoNL Nerd Font Medium Italic";
 
             # Font size
-            font_size = 10;
+            font_size = 11;
 
             # Enable ligatures by default
             disable_ligatures = "never";
