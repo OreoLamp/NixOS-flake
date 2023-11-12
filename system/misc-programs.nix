@@ -79,7 +79,7 @@
         enable = true;
         shellIntegration.enableZshIntegration = true;
         theme = "Tokyo Night";
-        font.name = "JetBrainsMonoNL Nerd Font";
+        font.name = "JetBrainsMonoNL Nerd Font Thin";
         font.size = 12;
         settings = {
             # Font families
@@ -89,7 +89,7 @@
             bold_italic_font = "JetBrainsMonoNL Nerd Font Medium Italic";
 
             # Font size
-            font_size = 12;
+            font_size = 10;
 
             # Enable ligatures by default
             disable_ligatures = "never";
