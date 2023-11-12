@@ -63,19 +63,6 @@
             # Remove titlebars
             window.titlebar = false;
             floating.titlebar = false;
-
-            # Bar config
-            # TODO: Make not shit
-            bars.swaybar = {
-                # Use waybar instead of i3bar
-                command = "\${pkgs.waybar}/bin/waybar";
-
-                # Make the bar default to the top instead of bottom (lol)
-                position = "top";
-
-                # Command to generate status line info
-                statusCommand = ''while date +"%Y-%m-%d %H:%M:%S"; do sleep 1; done'';
-            };
         };
     };
 }
