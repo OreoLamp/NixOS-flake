@@ -79,6 +79,7 @@
         enable = true;
         shellIntegration.enableZshIntegration = true;
         theme = "Tokyo Night";
+        font.name = "JetBrainsMonoNL Nerd Font";
         font.size = 12;
         settings = {
             # Font families
