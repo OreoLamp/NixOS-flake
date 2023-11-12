@@ -40,9 +40,7 @@
             keybindings = 
                 let mod = config.hm.wayland.windowManager.sway.config.modifier;
                 in lib.mkOptionDefault {
-                    "${mod}+Shift+s" = 
-                    ''exec wayshot -s "$(slurp)" -e png --stdout \| wl-copy; \
-                    tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
+                    "${mod}+Shift+s" = ''exec wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
                 };
 
             # Font settings
@@ -63,6 +61,19 @@
             # Remove titlebars
             window.titlebar = false;
             floating.titlebar = false;
+
+            bars = [
+                {
+                    # Command to use for the status bar
+                    command = "swaybar";
+
+                    # Position the bar at the top instead of at the bottom
+                    position = "top";
+
+                    # The command that returns the text used as the status
+                    statusCommand = ''while date +"%Y-%m-%d %H:%M:%S"; do sleep 1; done'';
+                }
+            ];
         };
     };
 }
