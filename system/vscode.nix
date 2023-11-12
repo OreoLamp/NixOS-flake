@@ -16,6 +16,7 @@
             alefragnani.project-manager
             antiantisepticeye.vscode-color-picker
             atomiks.moonlight
+            brody715.vscode-cuelang
             charliermarsh.ruff
             christian-kohler.path-intellisense
             cschlosser.doxdocgen

@@ -60,6 +60,8 @@
         rust-analyzer
         scala
         scala_3
+        cuelsp
+        cuetools
     ];
 
     # Git

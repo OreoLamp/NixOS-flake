@@ -46,6 +46,8 @@
         file lshw pciutils psmisc curl strace
         # Conveniences
         du-dust unar btop tmux nnn nvimpager nix-tree
+        # Cue, to build text-based config files
+        cue
     ];
 
     # System-wide neovim config
