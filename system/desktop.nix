@@ -2,7 +2,11 @@
 {
     users.users.eero.packages = with pkgs; [
         glib
+        piper
     ];
+
+    # Enable ratbagd for mouse config
+    services.ratbagd.enable = true;
 
     # Enables xdg portals, even for flatpaks (hopefully)!
     xdg.menus.enable = true;

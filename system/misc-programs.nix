@@ -3,7 +3,6 @@
     users.users.eero.packages = with pkgs; [
         kitty
         neofetch
-        piper
         mpv
         imv
         nomacs
