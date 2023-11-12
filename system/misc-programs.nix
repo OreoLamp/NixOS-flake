@@ -1,6 +1,7 @@
 { pkgs, ...}:
 {
     users.users.eero.packages = with pkgs; [
+        kitty
         neofetch
         piper
         mpv
@@ -73,7 +74,7 @@
     };
 
     # Kitty
-    # TODO: Finish and split into a separate file
+    # TODO: Set up cue to configure this properly
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
@@ -133,7 +134,39 @@
             # Fixes kitty window border width to 2 pixels. Note that this is not the OS window border.
             window_border_width = "2px";
 
-            ...
+            # Moves the tab bar to the top
+            tab_bar_edge = "top";
+
+            # Tab bar visual style
+            tab_bar_style = "separator";
+
+            # Always show the tab bar
+            tab_bar_min_tabs = 1;
+
+            # When closing a tab, open the tab that was open prior to the closed one
+            tab_switch_strategy = "previous";
+
+            # The separator used between tabs
+            tab_separator = " ┃ ";
+
+            # Symbol to display if a tab has activity and isn't in focus
+            # TODO: Figure out how to make this recolor the tab text instead
+
+            # Maximum length for a tab title
+            tab_title_max_length = 20;
+
+            # The layout of the tab title
+            # TODO: Customize
+
+            # Sets the font style of tabs to something more reasonable than bold italic
+            active_tab_font_style = "bold";
+            inactive_tab_font_style = "bold";
+
+            # Sets the default editor to use in kitty
+            editor = "neovim";
+
+            # Disables clipboard size limits
+            clipboard_max_size = "0";
         };
     };
 }
