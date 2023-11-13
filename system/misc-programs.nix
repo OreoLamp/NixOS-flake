@@ -69,7 +69,7 @@
         enable = true;
         
         # Use java 21 by default
-        package = pkgs.temurin-bin-21;
+        package = pkgs.temurin-bin-17;
     };
 
     # Git
