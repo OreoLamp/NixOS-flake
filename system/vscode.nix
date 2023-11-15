@@ -22,11 +22,8 @@
             cschlosser.doxdocgen
             dbaeumer.vscode-eslint
             donjayamanne.python-environment-manager
-            eamodio.gitlens
             ecmel.vscode-html-css
             enkia.tokyo-night
-            equinusocio.vsc-material-theme
-            equinusocio.vsc-material-theme-icons
             esbenp.prettier-vscode
             formulahendry.code-runner
             fortran-lang.linter-gfortran
@@ -44,13 +41,10 @@
             mads-hartmann.bash-ide-vscode
             mathworks.language-matlab
             mechatroner.rainbow-csv
-            mhutchie.git-graph
             miguelsolorio.fluent-icons
             mikestead.dotenv
             mkxml.vscode-filesize
             ms-azuretools.vscode-docker
-            ms-python.autopep8
-            ms-python.black-formatter
             ms-python.isort
             ms-python.pylint
             ms-python.python
@@ -77,10 +71,8 @@
             ms-vscode-remote.vscode-remote-extensionpack
             ms-vscode.vscode-github-issue-notebooks
             ms-vscode.vscode-selfhost-test-provider
-            # ms-vscode.vscode-serial-monitor
+            ms-vscode.vscode-serial-monitor
             njpwerner.autodocstring
-            pkief.material-icon-theme
-            pkief.material-product-icons
             platformio.platformio-ide
             rdebugger.r-debugger
             redhat.java
@@ -91,7 +83,6 @@
             ryu1kn.partial-diff
             scala-lang.scala
             scalameta.metals
-            sdras.night-owl
             shopify.ruby-lsp
             sonarsource.sonarlint-vscode
             sumneko.lua

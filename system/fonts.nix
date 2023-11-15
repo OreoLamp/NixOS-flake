@@ -35,7 +35,7 @@
         enable = true;
 
         # Hinting options
-        hinting.style = "full";
+        hinting.style = "slight";
         subpixel.rgba = "rgb";
         antialias = true;
 

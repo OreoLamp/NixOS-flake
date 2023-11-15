@@ -113,10 +113,10 @@
         font.size = 11;
         settings = {
             # Font families
-            font_family = "JetBrainsMonoNL Nerd Font ExtraLight";
-            bold_font = "JetBrainsMonoNL Nerd Font Medium";
-            italic_font = "JetBrainsMonoNL Nerd Font ExtraLight Italic";
-            bold_italic_font = "JetBrainsMonoNL Nerd Font Medium Italic";
+            font_family = "JetBrainsMono Nerd Font ExtraLight";
+            bold_font = "JetBrainsMono Nerd Font Medium";
+            italic_font = "JetBrainsMono Nerd Font ExtraLight Italic";
+            bold_italic_font = "JetBrainsMono Nerd Font Medium Italic";
 
             # Font size
             font_size = 11;
