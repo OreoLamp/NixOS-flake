@@ -71,7 +71,7 @@
             ms-vscode-remote.vscode-remote-extensionpack
             ms-vscode.vscode-github-issue-notebooks
             ms-vscode.vscode-selfhost-test-provider
-            ms-vscode.vscode-serial-monitor
+            # ms-vscode.vscode-serial-monitor
             njpwerner.autodocstring
             platformio.platformio-ide
             rdebugger.r-debugger
