@@ -63,6 +63,7 @@
         cuelsp
         cuetools
 	# VSCode here for testing purposes
+	vscode
     ];
 
     # Java
