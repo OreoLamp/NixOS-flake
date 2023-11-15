@@ -31,7 +31,7 @@
     services.flatpak.enable = true;
 
     # Makes electron stuff work better???
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    # environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # Enables openGL
     hardware.opengl.enable = true;

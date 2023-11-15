@@ -62,8 +62,6 @@
         scala_3
         cuelsp
         cuetools
-	# VSCode here for testing purposes
-	vscode
     ];
 
     # Java
