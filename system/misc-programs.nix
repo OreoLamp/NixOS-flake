@@ -200,7 +200,7 @@
             clipboard_max_size = "0";
 
 	    # Make Tokyo Night the color theme used
-	    include "${pkgs.kitty-themes}/share/kitty-themes/themes/tokyo_night_night.conf"
+	    include = "${pkgs.kitty-themes}/share/kitty-themes/themes/tokyo_night_night.conf"
 	    
         };
     };
