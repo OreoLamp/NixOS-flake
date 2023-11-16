@@ -37,7 +37,6 @@
     programs.xwayland.enable = true;
 
     # Sound stuff
-    sound.enable = true;
     hardware.pulseaudio.enable = false;
     
     # Pipewire settings
