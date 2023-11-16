@@ -50,7 +50,7 @@
 	use-xdg-base-directories = true;
 
 	# Enable some experimental features
-	exprimental-features = [
+	experimental-features = [
 	    
 	    # Enables flakes
 	    "flakes"
