@@ -109,7 +109,6 @@
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
-        theme = "Tokyo Night";
         font.name = "JetBrainsMonoNL Nerd Font Thin";
         font.size = 11;
         settings = {
@@ -199,6 +198,10 @@
 
             # Disables clipboard size limits
             clipboard_max_size = "0";
+
+	    # Make Tokyo Night the color theme used
+	    ${pkgs.kitty-themes}/share/kitty-themes/themes/tokyo_night_night.conf
+	    
         };
     };
 }
