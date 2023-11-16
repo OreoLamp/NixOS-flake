@@ -30,13 +30,13 @@
         wl-clipboard
         cliphist
         thefuck
-        dasel
         bat
         lsd
         fzf
         ripgrep
         tldr
         lsof
+	atool
         # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
         nil
