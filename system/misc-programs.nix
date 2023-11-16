@@ -37,6 +37,7 @@
         tldr
         lsof
 	atool
+	kitty-themes
         # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
         nil
