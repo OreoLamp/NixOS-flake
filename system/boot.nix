@@ -14,11 +14,9 @@
                 enable = true;
                 editor = false;
                 extraInstallCommands = ''
-		echo "default @saved
-		timeout 2
-		console-mode max" 
-		> /boot/loader/loader.conf
-		'';
+echo "default @saved
+timeout 2
+console-mode max" > /boot/loader/loader.conf'';
             };
         };
 
