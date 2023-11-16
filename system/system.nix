@@ -53,6 +53,9 @@
     # Eneables nix-index, a file database for nixpkgs
     programs.nix-index.enable = true; 
 
+    # Disables command-not-found, since it conflicts with nix-index
+    programs.command-not-found.enable = false;
+
     # System-wide neovim config
     programs.neovim = {
         enable = true;
