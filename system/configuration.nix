@@ -53,10 +53,10 @@
 	exprimental-features = [
 	    
 	    # Enables flakes
-	    flakes
+	    "flakes"
 		
 	    # nix-command, enables a ton of useful commands
-	    nix-command
+	    "nix-command"
 	];
     };
 
