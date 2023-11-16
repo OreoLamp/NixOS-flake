@@ -50,6 +50,9 @@
         cue
     ];
 
+    # Eneables nix-index, a file database for nixpkgs
+    programs.nix-index.enable = true; 
+
     # System-wide neovim config
     programs.neovim = {
         enable = true;

@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, lib, ...}:
 {
     users.users.eero.packages = with pkgs; [
         kitty
@@ -68,8 +68,8 @@
     programs.java = {
         enable = true;
         
-        # Use java 21 by default
-        package = pkgs.temurin-bin-17;
+        # Use java 17 by default
+        package = lib.mkForce pkgs.temurin-bin-17;
     };
 
     # Git
