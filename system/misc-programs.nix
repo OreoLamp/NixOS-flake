@@ -41,10 +41,10 @@
         # TODO: Figure out LLVM and GCC stuff
         nil
         shellcheck
-        temurin-bin-8
-        temurin-bin-11
-        temurin-bin-17
-        temurin-bin-21
+        # temurin-bin-8
+        # temurin-bin-11
+        # temurin-bin-17
+        # temurin-bin-21
         go
         ghc
         haskell-language-server
@@ -69,7 +69,7 @@
         enable = true;
         
         # Use java 17 by default
-        package = lib.mkForce pkgs.temurin-bin-17;
+        package = pkgs.temurin-bin-17;
     };
 
     # Git
