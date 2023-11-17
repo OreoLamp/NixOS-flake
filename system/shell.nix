@@ -39,7 +39,7 @@
         
         # Aliases (duh)
         shellAliases = {
-            sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix#desktop-nix";
+            sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix/NixOS-flake#desktop-nix";
         };
     };
 
