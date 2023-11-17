@@ -34,7 +34,6 @@
     
     # Your custom packages
     # Acessible through 'nix build', 'nix shell', etc
-    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
     
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
