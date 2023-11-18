@@ -8,7 +8,9 @@
     hm.programs.vscode = {
         enable = true;
         package = pkgs.vscode; 
-        extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+        extensions = let
+	    inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}) vscode-marketplace; 
+	  in with vscode-marketplace; [
             vscode-marketplace."13xforever".language-x86-64-assembly
             alefragnani.bookmarks
             alefragnani.project-manager
@@ -69,7 +71,7 @@
             ms-vscode-remote.vscode-remote-extensionpack
             ms-vscode.vscode-github-issue-notebooks
             ms-vscode.vscode-selfhost-test-provider
-            # ms-vscode.vscode-serial-monitor
+            ms-vscode.vscode-serial-monitor
             njpwerner.autodocstring
             platformio.platformio-ide
             rdebugger.r-debugger
