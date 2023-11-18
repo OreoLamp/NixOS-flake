@@ -8,9 +8,7 @@
     hm.programs.vscode = {
         enable = true;
         package = pkgs.vscode; 
-        extensions = let
-            inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}) vscode-marketplace;
-        in with vscode-marketplace; [
+        extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
             vscode-marketplace."13xforever".language-x86-64-assembly
             alefragnani.bookmarks
             alefragnani.project-manager
