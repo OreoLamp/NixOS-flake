@@ -77,7 +77,6 @@
         enable = true;
         userName = "Eero Lampela";
         userEmail = "eero.lampela@gmail.com";
-	signing.signByDefault = true;
         extraConfig = {
             core.pager = "$PAGER";
             diff.algorithm = "minimal";
