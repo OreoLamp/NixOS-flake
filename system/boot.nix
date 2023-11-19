@@ -1,4 +1,7 @@
 {
+     # TODO: Configure this to use only the needed kernel modules
+    # Start the rest with a systemd unit after boot
+
     # Generic boot process config
     boot = {
         # Bootloader config

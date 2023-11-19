@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}:
+{ pkgs, ...}:
 {
     users.users.eero.packages = with pkgs; [
         kitty
@@ -36,15 +36,14 @@
         ripgrep
         tldr
         lsof
-	kitty-themes
+        kitty-themes
         # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
-        nil
         shellcheck
-        # temurin-bin-8
-        # temurin-bin-11
-        # temurin-bin-17
-        # temurin-bin-21
+        temurin-bin-8
+        temurin-bin-11
+        temurin-bin-17
+        temurin-bin-21
         go
         ghc
         haskell-language-server
@@ -108,7 +107,7 @@
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
-        font.name = "JetBrainsMonoNL Nerd Font Thin";
+        font.name = "JetBrainsMono Nerd Font Thin";
         font.size = 11;
         settings = {
             # Font families
@@ -198,8 +197,8 @@
             # Disables clipboard size limits
             clipboard_max_size = "0";
 
-	    # Make Tokyo Night the color theme used
-	    include = "${pkgs.kitty-themes}/share/kitty-themes/themes/tokyo_night_night.conf";
+            # Make Tokyo Night the color theme used
+            include = "${pkgs.kitty-themes}/share/kitty-themes/themes/tokyo_night_night.conf";
         };
     };
 }

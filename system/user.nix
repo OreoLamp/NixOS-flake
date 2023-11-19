@@ -8,7 +8,7 @@
         ./sway.nix
 
         # VSCode
-	./vscode.nix
+        ./vscode.nix
 
         # Security stuff
         ./security.nix
@@ -37,6 +37,7 @@
     };
 
     # Makes home-manager load stuff
+    # TODO: Get rid of the shitshow that is home-manager
     home-manager = {
         extraSpecialArgs = { inherit inputs outputs; };
         users.eero = {

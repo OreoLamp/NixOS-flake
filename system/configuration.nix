@@ -17,47 +17,48 @@
 
     # Nix configuration, as in for the nix system itself
     nix.settings = {
-    	# Accepts a flake config without prompting
-	accept-flake-config = true;
 
-	# Disallow dirty git/mercurial trees
-	allow-dirty = false;
+        # Accepts a flake config without prompting
+        accept-flake-config = true;
 
-	# Disallow importing within a derivation. 
-	# Makes sure no builds are done at evaluation time.
-	allow-import-from-derivation = false;
+        # Disallow dirty git/mercurial trees
+        allow-dirty = false;
 
-	# Makes nix optimize the store after every rebuild
-	auto-optimise-store = true;
+        # Disallow importing within a derivation. 
+        # Makes sure no builds are done at evaluation time.
+        allow-import-from-derivation = false;
 
-	# Makes nix fall back on building from source if a binary substitute fails
-	fallback = true;
+        # Makes nix optimize the store after every rebuild
+        auto-optimise-store = true;
 
-	# Disables synchronous flushing of metadata to disk
-	# fsync causes unnecessary disk degradation
-	fsync-metadata = false;
+        # Makes nix fall back on building from source if a binary fails
+        fallback = true;
 
-	# Disables the limit on the amount of allowed http connections
-	http-connections = 0;
+        # Disables synchronous flushing of metadata to disk
+        # fsync causes unnecessary disk degradation
+        fsync-metadata = false;
 
-	# Add more log lines lol
-	log-lines = 20;
+        # Disables the limit on the amount of allowed http connections
+        http-connections = 0;
 
-	# Print a stack trace in case of expression evaluation errors
-	show-trace = true;
+        # Add more log lines lol
+        log-lines = 20;
 
-	# Makes nix comply with XDG base directories for files in $HOME
-	use-xdg-base-directories = true;
+        # Print a stack trace in case of expression evaluation errors
+        show-trace = true;
 
-	# Enable some experimental features
-	experimental-features = [
-	    
-	    # Enables flakes
-	    "flakes"
-		
-	    # nix-command, enables a ton of useful commands
-	    "nix-command"
-	];
+        # Makes nix comply with XDG base directories for files in $HOME
+        use-xdg-base-directories = true;
+
+        # Enable some experimental features
+        experimental-features = [
+        
+            # Enables flakes
+            "flakes"
+    
+            # nix-command, enables a ton of useful commands
+            "nix-command"
+        ];
     };
 
     imports = [ 

@@ -45,7 +45,12 @@
 
             # Font settings
             fonts = {
-                names = [ "Blinker" "Noto Sans" "Font Awesome 6 Free" "Font Awesome 6 Brands" ];
+                names = [ 
+                    "Blinker" 
+                    "Noto Sans" 
+                    "Font Awesome 6 Free" 
+                    "Font Awesome 6 Brands" 
+                ];
                 style = "Regular";
                 size = 12.0;
             };
