@@ -12,7 +12,7 @@
         package = pkgs.vscode; 
         extensions = 
         with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
-            AtomMaterial.a-file-icon-vscode
+            atommaterial.a-file-icon-vscode
             alefragnani.bookmarks
             alefragnani.project-manager
             atomiks.moonlight

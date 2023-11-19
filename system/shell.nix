@@ -31,12 +31,12 @@
 
         # Extra options to enable in .zshrc
         initExtra = "
-            setopt APPEND_HISTORY
-            setopt HIST_LEX_WORDS
-            setopt HIST_VERIFY
-            setopt INC_APPEND_HISTORY_TIME
+setopt APPEND_HISTORY
+setopt HIST_LEX_WORDS
+setopt HIST_VERIFY
+setopt INC_APPEND_HISTORY_TIME
         ";
-        
+
         # Aliases (duh)
         shellAliases = {
             sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix/NixOS-flake#desktop-nix";

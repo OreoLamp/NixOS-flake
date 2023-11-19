@@ -54,7 +54,7 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         # TODO: Proper noto fallbacks
         localConf = ''
 <alias>
-<!-- Use Noto Sans as default sans-serif font, no fallbacks needed -->
+<!-- Use Noto Sans as default sans-serif, no fallbacks needed -->
     <family>sans-serif</family>
     <prefer>
         <family>Noto Sans</family>
@@ -66,13 +66,13 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         <family>JetBrainsMono Nerd Font</family>
     </prefer>
     
-    <!-- Set noto serif as default serif font, no fallbacks needed -->
+    <!-- Set noto serif as default serif, no fallbacks needed -->
     <family>serif</family>
     <prefer>
         <family>Noto Serif</family>
     </prefer>
 
-    <!-- Use Blinker as default system UI font, fall back to Noto Sans UI -->
+    <!-- Use Blinker as default system-ui, fall back to Noto Sans UI -->
     <family>system-ui</family>
     <prefer>
         <family>Blinker</family>

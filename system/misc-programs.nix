@@ -39,20 +39,17 @@
         kitty-themes
         # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
+        # Sets up gnome keyring as the password storage
+        # Also moves extensions to somewhere more sane
+        # And confg folder from .config/Code to .config/vscode
+        ( vscode.override { commandLineArgs = ''--password-store="gnome" --extensions-dir "$XDG_DATA_HOME/vscode" --user-data-dir "$XDG_CONFIG_HOME/vscode"''; } )
+        nil
         shellcheck
-        temurin-bin-8
-        temurin-bin-11
-        temurin-bin-17
-        temurin-bin-21
         go
         ghc
         haskell-language-server
         julia
         fortls
-        python310Full
-        python311Full
-        python312Full
-        python313Full
         R
         rPackages.languageserver
         ruby-lsp
@@ -62,14 +59,6 @@
         cuelsp
         cuetools
     ];
-
-    # Java
-    programs.java = {
-        enable = true;
-        
-        # Use java 17 by default
-        package = pkgs.temurin-bin-17;
-    };
 
     # Git
     hm.programs.git = {

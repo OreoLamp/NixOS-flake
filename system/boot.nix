@@ -37,6 +37,7 @@ console-mode max" > /boot/loader/loader.conf'';
     };
 
     # Systemd mount unit for 2tb SSD
+    # TODO: Move out of here, start only after login, this is slow
     systemd.mounts = [{
         mountConfig = { DirectoryMode = "0755"; };
         description = "2tbSSD mount";
