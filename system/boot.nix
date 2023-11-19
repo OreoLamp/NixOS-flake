@@ -41,7 +41,7 @@ console-mode max" > /boot/loader/loader.conf'';
     systemd.mounts = [{
         mountConfig = { DirectoryMode = "0755"; };
         description = "2tbSSD mount";
-        options = "nofail,atime,exec,windows_names,remove_hiberfile,big_writes,uid=1000,gid=100,dmask=022,fmask=133,";
+        options = "nofail,atime,exec,windows_names,remove_hiberfile,big_writes,uid=1000,gid=100,umask=0022,fmask=0022,gmask=0022";
         after = [ "multi-user.target" ];
         wantedBy = [ "multi-user.target"];
         type = "ntfs-3g";
