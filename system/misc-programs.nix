@@ -54,8 +54,7 @@
         rPackages.languageserver
         ruby-lsp
         rust-analyzer
-        scala
-        scala_3
+        cue
         cuelsp
         cuetools
     ];

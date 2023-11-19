@@ -7,9 +7,6 @@
         # Sway
         ./sway.nix
 
-        # VSCode
-        # ./vscode.nix
-
         # Security stuff
         ./security.nix
 

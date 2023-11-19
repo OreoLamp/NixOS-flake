@@ -46,8 +46,6 @@
         file lshw pciutils psmisc curl strace
         # Conveniences
         du-dust unar btop tmux nnn nvimpager nix-tree
-        # Cue, to build text-based config files
-        cue
     ];
 
     # Eneables nix-index, a file database for nixpkgs
