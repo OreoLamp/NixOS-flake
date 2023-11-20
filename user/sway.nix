@@ -10,6 +10,7 @@
         wrapperFeatures.gtk = true;
     };
 
+    # TODO: This whole shitshow without home-manager
     # Home-manager sway config
     hm.wayland.windowManager.sway = {
         enable = true;

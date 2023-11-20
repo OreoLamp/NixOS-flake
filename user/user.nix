@@ -1,6 +1,12 @@
-{ pkgs, inputs, outputs, ... }:
+{ pkgs, lib, inputs, outputs, ... }:
 {
     imports = [
+        # Add an alias "hm" for "home-manager.users.eero"
+        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
+
+        # User profile
+        inputs.home-manager.nixosModules.home-manager
+
         # Shell
         ./shell.nix
 

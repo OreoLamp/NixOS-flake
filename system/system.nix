@@ -1,5 +1,25 @@
 { pkgs, ... }:
 {
+    imports = [ 
+        # Config for nix itself
+        ./nix.nix
+
+        # Hardware config
+        ./hardware-configuration.nix
+
+        # Boot config and such
+        ./boot.nix
+
+        # Font config
+        ./fonts.nix
+
+        # Basic system config
+        ./system.nix
+
+        # Generic desktop config stuff
+        ./desktop.nix
+    ];
+
     # Networking config
     networking.hostName = "desktop-nix";
     networking.networkmanager.enable = true;
@@ -53,6 +73,12 @@
 
     # Disables command-not-found, since it conflicts with nix-index
     programs.command-not-found.enable = false;
+
+    # Enables polkit
+    security.polkit.enable = true;
+
+    # Enables rtkit
+    security.rtkit.enable = true;
 
     # System-wide neovim config
     programs.neovim = {

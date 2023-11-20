@@ -33,7 +33,10 @@
                 specialArgs = {inherit inputs outputs;};
                 modules = [
                     # Main config file
-                    ./system/configuration.nix
+                    ./system/system.nix
+
+                    # User configs
+                    ./user/user.nix
                 ];
             };
         };

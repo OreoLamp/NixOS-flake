@@ -1,9 +1,4 @@
 {
-    lib,
-    inputs,
-    ... 
-}: 
-{
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It's perfectly fine and recommended to leave
@@ -57,30 +52,4 @@
             "nix-command"
         ];
     };
-
-    imports = [ 
-        # Add an alias "hm" for "home-manager.users.eero"
-        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
-
-        # User profile
-        inputs.home-manager.nixosModules.home-manager
-
-        # Hardware config
-        ./hardware-configuration.nix
-
-        # Boot config and such
-        ./boot.nix
-
-        # Font config
-        ./fonts.nix
-
-        # Basic system config
-        ./system.nix
-
-        # User config
-        ./user.nix
-
-        # Generic desktop config stuff
-        ./desktop.nix
-    ];
 }

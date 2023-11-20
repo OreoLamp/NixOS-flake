@@ -17,10 +17,4 @@
     hm.programs.gpg.homedir = "${config.hm.xdg.dataHome}/gnupg";
     hm.services.gpg-agent.enable = true;
     hm.services.gpg-agent.pinentryFlavor = "gnome3";
-
-    # Enables polkit
-    security.polkit.enable = true;
-
-    # Enables rtkit
-    security.rtkit.enable = true;
 }
