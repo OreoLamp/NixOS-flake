@@ -36,8 +36,13 @@
         packages = with pkgs; [
             gradience # Adwaita theme generator
             font-manager # Exactly what the name suggests
+            glib # For vscode stuff
+            piper # For mouse stuff
         ];
     };
+
+    # Enable ratbagd for mouse config
+    services.ratbagd.enable = true;
 
     # Makes home-manager load stuff
     # TODO: Get rid of the shitshow that is home-manager
