@@ -30,6 +30,7 @@
         wl-clipboard
         cliphist
         thefuck
+        dasel
         bat
         lsd
         fzf

@@ -21,9 +21,6 @@
         # Accepts a flake config without prompting
         accept-flake-config = true;
 
-        # Disallow dirty git/mercurial trees
-        allow-dirty = false;
-
         # Disallow importing within a derivation. 
         # Makes sure no builds are done at evaluation time.
         allow-import-from-derivation = false;
