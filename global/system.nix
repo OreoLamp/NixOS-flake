@@ -13,9 +13,6 @@
         # Font config
         ./fonts.nix
 
-        # Basic system config
-        ./system.nix
-
         # Generic desktop config stuff
         ./desktop.nix
 
