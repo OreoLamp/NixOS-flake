@@ -20,7 +20,7 @@
         ./desktop.nix
 
         # User config (testing whether loading it from here works?)
-        ../user/user.nix
+        ./user/user.nix
     ];
 
     # Networking config
