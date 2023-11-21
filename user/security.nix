@@ -19,9 +19,33 @@
     hm.services.gpg-agent.enable = true;
     hm.services.gpg-agent.pinentryFlavor = "gnome3";
 
+    # Enables polkit
+    security.polkit.enable = true;
+
+    # Enables rtkit
+    security.rtkit.enable = true;
+
     # SSH config
     # TODO: Set up an SSH server
     programs.ssh = {
         startAgent = true;
+    };
+
+    # Adds a systemd service for starting the gnome polkit authentication agent on login
+    # This is cursed as fuck but nixos has apparently no sane way of doing this
+    systemd = {
+        user.services.polkit-gnome-authentication-agent-1 = {
+            description = "polkit-gnome-authentication-agent-1";
+            wantedBy = [ "graphical-session.target" ];
+            wants = [ "graphical-session.target" ];
+            after = [ "graphical-session.target" ];
+            serviceConfig = {
+                Type = "simple";
+                ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+                Restart = "on-failure";
+                RestartSec = 1;
+                TimeoutStopSec = 10;
+            };
+        };
     };
 }

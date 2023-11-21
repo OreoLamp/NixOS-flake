@@ -71,12 +71,6 @@
     # Disables command-not-found, since it conflicts with nix-index
     programs.command-not-found.enable = false;
 
-    # Enables polkit
-    security.polkit.enable = true;
-
-    # Enables rtkit
-    security.rtkit.enable = true;
-
     # System-wide neovim config
     programs.neovim = {
         enable = true;
