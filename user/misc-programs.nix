@@ -158,7 +158,7 @@
                 allowPackReuse = false;
 
                 # Increases delta cache size from 256MiB, for some reason set in bytes
-                deltaCacheSize = 2147483648;
+                deltaCacheSize = 2147483647;
 
                 # Increases the max size of an object in delta cache
                 deltaCacheLimit = 65535;
