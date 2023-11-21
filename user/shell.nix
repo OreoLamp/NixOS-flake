@@ -30,6 +30,7 @@
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
+        dotDir = "$HOME/.config/zsh";
 
         # History stuff
         history = {
