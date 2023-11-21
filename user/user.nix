@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, outputs, ... }:
+{ pkgs, lib, inputs, self, ... }:
 {
     imports = [
         # Add an alias "hm" for "home-manager.users.eero"
@@ -47,7 +47,7 @@
     # Makes home-manager load stuff
     # TODO: Get rid of the shitshow that is home-manager
     home-manager = {
-        extraSpecialArgs = { inherit inputs outputs; };
+        extraSpecialArgs = { inherit inputs self; };
         users.eero = {
             programs.home-manager.enable = true;
             home.stateVersion = "23.05";

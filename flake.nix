@@ -19,10 +19,7 @@
         nixpkgs,
         home-manager,
         ...
-    } @ inputs:
-        let inherit (self) outputs;
-
-        in {
+    } @ inputs: {
 
         # NixOS configuration entrypoint
         # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -30,7 +27,7 @@
 
             # Hostname
             desktop-nix = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs outputs;};
+                specialArgs = {inherit inputs self;};
                 modules = [
                     # Main config file
                     ./global/system.nix

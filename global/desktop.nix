@@ -1,6 +1,6 @@
 { pkgs, ...}:
 {
-    # Enables xdg portals, even for flatpaks (hopefully)!
+    # Enables xdg portals, even for flatpaks (hopefully)
     xdg.menus.enable = true;
     xdg.portal = {
         enable = true;
@@ -24,7 +24,7 @@
 
     # Enables openGL
     hardware.opengl.enable = true;
-    
+
     # Enables xwayland
     programs.xwayland.enable = true;
 

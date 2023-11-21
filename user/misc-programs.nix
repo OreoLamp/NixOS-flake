@@ -65,6 +65,10 @@
         enable = true;
         userName = "Eero Lampela";
         userEmail = "eero.lampela@gmail.com";
+        signing = {
+            key = "214155AB1DF262A0";
+            signByDefault = true;
+        };
         extraConfig = {
             core.pager = "$PAGER";
             diff.algorithm = "minimal";
