@@ -28,7 +28,14 @@
     # SSH config
     # TODO: Set up an SSH server
     programs.ssh = {
+        # Starts SSH agent when the user logs in
         startAgent = true;
+
+        # enables ssh-askpass (gui for asking ssh password)
+        enableAskPasword = true;
+
+        # Uses gnome thingy for ssh-askpass
+        askPassword = "${pkgs.gcr}/libexec/gcr-ssh-askpass";
     };
 
     # Adds a systemd service for starting the gnome polkit authentication agent on login
