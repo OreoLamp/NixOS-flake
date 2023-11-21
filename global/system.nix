@@ -1,20 +1,11 @@
 { pkgs, ... }:
 {
-    imports = [ 
-        # Config for nix itself
-        ./nix.nix
-
-        # Hardware config
-        ./hardware-configuration.nix
-
-        # Boot config and such
-        ./boot.nix
-
-        # Font config
-        ./fonts.nix
-
-        # Generic desktop config stuff
-        ./desktop.nix
+    # System-wide packages that I want always available
+    environment.systemPackages = with pkgs; [
+        # Basic utility packages
+        file lshw pciutils psmisc curl strace lsof
+        # Conveniences
+        du-dust unar btop tmux nnn nvimpager nix-tree
     ];
 
     # Networking config
@@ -53,29 +44,9 @@
     services.locate = {
         enable = true;
         package = pkgs.plocate;
+        # TODO: Figure out a way to auto-update the database in a sane way
         interval = "never";
+        # set to null because otherwise plocate complains lol
         localuser = null;
-    };
-
-    # System-wide packages that I want always available
-    environment.systemPackages = with pkgs; [
-        # Basic utility packages
-        file lshw pciutils psmisc curl strace lsof
-        # Conveniences
-        du-dust unar btop tmux nnn nvimpager nix-tree
-    ];
-
-    # Eneables nix-index, a file database for nixpkgs
-    programs.nix-index.enable = true; 
-
-    # Disables command-not-found, since it conflicts with nix-index
-    programs.command-not-found.enable = false;
-
-    # System-wide neovim config
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-        viAlias = true;
-        vimAlias = true;
     };
 }

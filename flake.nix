@@ -29,11 +29,11 @@
             desktop-nix = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs self;};
                 modules = [
-                    # Main config file
-                    ./global/system.nix
+                    # Config for nix itself
+                    ./nix.nix
 
-                    # User configs
-                    ./user/user.nix
+                    # System-wide configs
+                    ./modules.nix
                 ];
             };
         };

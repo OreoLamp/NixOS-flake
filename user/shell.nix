@@ -6,15 +6,30 @@
         atuin
     ];
 
+    # Global shell config, applies to all shells
+    environment.variables = {
+        # Yeets .gnupg/ from $HOME
+        GNUPGHOME = "$XDG_DATA_HOME"/gnupg;
+    };
+
+    # Bash history file yeetage
+    programs.bash.shellInit = ''export HISTFILE="$XDG_STATE_HOME"/bash/history'';
+
+    # Global zsh stuff
+    programs.zsh = {
+        enable = true;
+        
+        # .zshenv yeetage
+        shellInit = ''export ZDOTDIR="$HOME"/.config/zsh'';
+    };
+
     # zsh config, done in home-manager because home-manager is actually moronic
     # TODO: This whole shitshow in .zshrc, and just yeet it in the correct place with home-manager
     # (fuck home-manager)
-    programs.zsh.enable = true;
     hm.programs.zsh = {
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        dotDir = ".config/zsh";
 
         # History stuff
         history = {

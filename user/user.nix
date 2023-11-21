@@ -1,25 +1,5 @@
-{ pkgs, lib, inputs, self, ... }:
+{ pkgs, inputs, self, ... }:
 {
-    imports = [
-        # Add an alias "hm" for "home-manager.users.eero"
-        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
-
-        # User profile
-        inputs.home-manager.nixosModules.home-manager
-
-        # Shell
-        ./shell.nix
-
-        # Sway
-        ./sway.nix
-
-        # Security stuff
-        ./security.nix
-
-        # Random tools and programs
-        ./misc-programs.nix
-    ];
-
     # Makes zsh the default user shell
     users.defaultUserShell = pkgs.zsh;
 
