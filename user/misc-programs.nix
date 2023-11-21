@@ -62,13 +62,9 @@
 
     # Git
     hm.programs.git = {
-        # enable = true;
-        # userName = "Eero Lampela";
-        # userEmail = "eero.lampela@gmail.com";
-        # signing = {
-        #     key = "214155AB1DF262A0";
-        #     signByDefault = true;
-        # };
+        enable = true;
+
+        # All config is done in extraConfig because i want to get rid of home-manager
         extraConfig = {
             core = {
                 # Makes git case-insensetive, for NTFS compatability
@@ -86,21 +82,12 @@
                 fsync = "objects,index,commit-graph";
             };
 
-            merge = {
-                # Disables merge fast-forwarding, so git creates a merge commit for those
-                ff = false;
+            user = {
+                name = "Eero Lampela";
+                email = "eero.lampela@gmail.com";
 
-                # Makes sure that merges are signed by a valid key
-                verifySignatures = true;
-
-                # Adds merge logs
-                log = true;
-
-                # Because git treats directory renames as file renames
-                renameLimit = 100000;
-
-                # Renormalize the merged data to prevent unnecessary conflicts
-                renormalize = true;
+                # Key identifier used for signing stuff
+                signingKey = "214155AB1DF262A0";
             };
 
             diff = {
@@ -123,16 +110,89 @@
                 guitool = "meld";
             };
 
+            gc = {
+                # Makes the amount of possible files gc compares against for delta compression higher
+                aggressiveWindow = 1000;
+
+                # Disables auto gc
+                auto = 0;
+
+                # Disables pruning unreachable objects
+                pruneExpire = "never";
+            };
+
+            log = {
+                # Stops git from abbreviating commits by default
+                abbrevCommit = false;
+
+                # Gives dates in a more sensible format ()
+                date = "format:%F %T";
+
+                # Enables short ref names in terminal, disables them elsewhere
+                decorate = "auto";
+            };
+
+            merge = {
+                # Disables merge fast-forwarding, so git creates a merge commit for those
+                ff = false;
+
+                # Makes sure that merges are signed by a valid key
+                verifySignatures = true;
+
+                # Adds merge logs
+                log = true;
+
+                # Because git treats directory renames as file renames
+                renameLimit = 100000;
+
+                # Renormalize the merged data to prevent unnecessary conflicts
+                renormalize = true;
+            };
+
+            pack = {
+                # Default window size used by git-pack-objects
+                # Basically, how many objects to compare against to find delta compression
+                window = 250;
+
+                # Disables packfile reuse, since it results in larger packs
+                allowPackReuse = false;
+
+                # Increases delta cache size from 256MiB, for some reason set in bytes
+                deltaCacheSize = 2147483648;
+
+                # Increases the max size of an object in delta cache
+                deltaCacheLimit = 65535;
+
+                # Sets the maximum number of threads for delta searching
+                # Limited to 6, as each thread gets its own memory pool.
+                threads = 6;
+            };
+
+            # Makes fetch write a commit graph after every download by git fetch
+            fetch.writeCommitGraph = true;
+
             # Makes supported commands output in columns, if the output is a terminal
             column.ui = "auto";
 
             # Makes all commits GPG-signed
             commit.gpgSign = true;
 
-            # diff.algorithm = "minimal";
-            # merge.guitool = "nvimdiff";
-            # submodule.fetchJobs = "0";
-            # init.defaultBranch = "main";
+            # Renames the default branch to "main" instead of "master"
+            init.defaultBranch = "main";
+
+            # Makes git use the default pager for manpages
+            man.viewer = "$PAGER";
+
+            # Disables pull fast-forwarding, so git creates a pull commit for those
+            pull.ff = false;
+
+            push.gpgSign = true;
+
+            # Allow this many fetch jobs for submodules in parallel
+            submodule.fetchJobs = 12;
+
+            # GPG sign tags
+            tag.gpgSign = true;
         };
     };
 
