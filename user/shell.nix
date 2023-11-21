@@ -9,7 +9,7 @@
     # Global shell config, applies to all shells
     environment.variables = {
         # Yeets .gnupg/ from $HOME
-        GNUPGHOME = "$XDG_DATA_HOME"/gnupg;
+        GNUPGHOME = /home/eero/.local/share/gnupg;
     };
 
     # Bash history file yeetage
