@@ -32,7 +32,7 @@
         startAgent = true;
 
         # enables ssh-askpass (gui for asking ssh password)
-        enableAskPasword = true;
+        enableAskPassword = true;
 
         # Uses gnome thingy for ssh-askpass
         askPassword = "${pkgs.gcr}/libexec/gcr-ssh-askpass";
