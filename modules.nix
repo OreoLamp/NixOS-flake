@@ -16,11 +16,8 @@
         # Systemd units, services, and config
         ./global/systemd.nix
 
-        # Add an alias "hm" for "home-manager.users.eero"
-        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
-
-        # User profile
-        inputs.home-manager.nixosModules.home-manager
+        # User config
+        ./user/user.nix
 
         # Shell
         ./user/shell.nix
@@ -36,5 +33,11 @@
 
         # Font config
         ./user/fonts.nix
+
+        # Add an alias "hm" for "home-manager.users.eero"
+        ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
+
+        # User profile
+        inputs.home-manager.nixosModules.home-manager
     ];
 }
