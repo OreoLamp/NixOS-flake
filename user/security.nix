@@ -4,6 +4,7 @@
     users.users.eero.packages = with pkgs; [
         gnupg # For some reason have to manually specify this to be installed???
         libsecret # Required for vscode gpg integration
+        gcr # Gnome crypto services (Their impl has the best ui lol)
     ];
 
     # Enables gnome-keyring and seahorse
@@ -17,4 +18,10 @@
     hm.programs.gpg.homedir = "${config.hm.xdg.dataHome}/gnupg";
     hm.services.gpg-agent.enable = true;
     hm.services.gpg-agent.pinentryFlavor = "gnome3";
+
+    # SSH config
+    # TODO: Set up an SSH server
+    programs.ssh = {
+        startAgent = true;
+    };
 }

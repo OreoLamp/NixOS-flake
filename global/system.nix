@@ -60,7 +60,7 @@
     # System-wide packages that I want always available
     environment.systemPackages = with pkgs; [
         # Basic utility packages
-        file lshw pciutils psmisc curl strace
+        file lshw pciutils psmisc curl strace lsof
         # Conveniences
         du-dust unar btop tmux nnn nvimpager nix-tree
     ];

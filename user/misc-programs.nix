@@ -1,80 +1,138 @@
 { pkgs, ...}:
 {
     users.users.eero.packages = with pkgs; [
-        kitty
-        neofetch
-        mpv
-        imv
-        nomacs
-        peazip
-        firefox
-        libsForQt5.okular
-        inkscape
-        gimp
-        audacity
-        obs-studio
-        qbittorrent
-        mullvad-vpn
-        bitwarden
-        calibre
-        signal-desktop
-        telegram-desktop
-        spotify
-        spotifywm
-        spotifyd # TODO: Config this
-        tofi
-        eww-wayland
-        swaylock
-        wayshot
-        slurp
-        wl-clipboard
-        cliphist
-        thefuck
-        dasel
-        bat
-        lsd
-        fzf
-        ripgrep
-        tldr
-        lsof
-        kitty-themes
+        kitty # Terminal emulator
+        neofetch # System information thingy
+        mpv # Minimal video player
+        imv # Minimal image viewer
+        nomacs # Less minimal image viewer, but has an actual gui
+        peazip # ZIP file manager (should yeet ngl)
+        firefox # Browser
+        libsForQt5.okular # Document viewer / editor
+        inkscape # Vector graphics editor
+        gimp # Image editor
+        audacity # Waveform editor
+        obs-studio # Screen recorder
+        qbittorrent # Bittorrent client with a GUI
+        mullvad-vpn # VPN
+        bitwarden # Password manager
+        calibre # Ebook library thingy
+        signal-desktop # Messaging platform
+        telegram-desktop # Another messaging platform
+        spotify # For music
+        spotifywm # Sets the spotify window title correctly. # TODO: Configure this
+        spotifyd # Daemonized spotify: # TODO: Configure this
+        tofi # Launcher / runner
+        eww-wayland # Custom widgets # TODO: Set up
+        swaylock # Lock screen support # TODO: Set up
+        wayshot # Screenshot utility for Wayland
+        slurp # Select area from screen on Wayland
+        wl-clipboard # Wayland clipboard
+        cliphist # Clipboard history, preserves everything byte for byte
+        thefuck # Checks for typos and shit in the last command if it didnt work
+        dasel # jq / yq, but faster and for a lot more data types
+        bat # cat but better
+        lsd # ls but better # TODO: Check out eza?
+        fzf # Command line fuzzy finder
+        ripgrep # Faster grep with more capabilities
+        tldr # Gives tldr examples of how to use commands
+        kitty-themes # For themes in kitty
+        meld # GUI diff / merge tool
         # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
         # Sets up gnome keyring as the password storage
         # Also moves extensions to somewhere more sane
         # And confg folder from .config/Code to .config/vscode
         ( vscode.override { commandLineArgs = ''--password-store="gnome" --extensions-dir "$XDG_DATA_HOME/vscode" --user-data-dir "$XDG_CONFIG_HOME/vscode"''; } )
-        nil
-        shellcheck
-        go
-        ghc
-        haskell-language-server
-        julia
-        fortls
-        R
-        rPackages.languageserver
-        ruby-lsp
-        rust-analyzer
-        cue
-        cuelsp
-        cuetools
+        nil # Nix language server
+        shellcheck # Shell language server
+        go # Go language
+        ghc # Glasgow Haskell Compiler
+        haskell-language-server # take a guess
+        julia # Julia toolchain ig?
+        fortls # Fortran language server
+        R # R compiler and programming language
+        rPackages.languageserver # R language server
+        ruby-lsp # Ruby language server
+        rust-analyzer # Rust language server
+        cue # Cue programming language
+        cuelsp # Cue language server
+        cuetools # Cue utilities
     ];
 
     # Git
     hm.programs.git = {
-        enable = true;
-        userName = "Eero Lampela";
-        userEmail = "eero.lampela@gmail.com";
-        signing = {
-            key = "214155AB1DF262A0";
-            signByDefault = true;
-        };
+        # enable = true;
+        # userName = "Eero Lampela";
+        # userEmail = "eero.lampela@gmail.com";
+        # signing = {
+        #     key = "214155AB1DF262A0";
+        #     signByDefault = true;
+        # };
         extraConfig = {
-            core.pager = "$PAGER";
-            diff.algorithm = "minimal";
-            merge.guitool = "nvimdiff";
-            submodule.fetchJobs = "0";
-            init.defaultBranch = "main";
+            core = {
+                # Makes git case-insensetive, for NTFS compatability
+                ignoreCase = true;
+                # Disallows files / paths that NTFS would disallow
+                protectNTFS = true;
+
+                # TODO: Figure out whether askPass is needed
+
+                # Sets the default editor and pager
+                editor = "$EDITOR";
+                pager = "$PAGER";
+                
+                # Makes git do proper file write sync on added and committed files
+                fsync = "objects,index,commit-graph";
+            };
+
+            merge = {
+                # Disables merge fast-forwarding, so git creates a merge commit for those
+                ff = false;
+
+                # Makes sure that merges are signed by a valid key
+                verifySignatures = true;
+
+                # Adds merge logs
+                log = true;
+
+                # Because git treats directory renames as file renames
+                renameLimit = 100000;
+
+                # Renormalize the merged data to prevent unnecessary conflicts
+                renormalize = true;
+            };
+
+            diff = {
+                # Generate 5 lines of context instead of 3 
+                context = "5";
+
+                # Show context between diff hunks, makes git fuse hunks that are close by
+                interHunkContext = "5";
+
+                # Makes file rename detection detect more file renames
+                renameLimit = 100000;
+
+                # Uses a better diff algorithm
+                algorithm = "minimal";
+                
+                # Use nvimdiff as the diff tool
+                tool = "nvimdiff";
+
+                # Use meld as the GUI diff tool
+                guitool = "meld";
+            };
+
+            # Makes supported commands output in columns, if the output is a terminal
+            column.ui = "auto";
+
+            # Makes all commits GPG-signed
+            commit.gpgSign = true;
+
+            # diff.algorithm = "minimal";
+            # merge.guitool = "nvimdiff";
+            # submodule.fetchJobs = "0";
+            # init.defaultBranch = "main";
         };
     };
 
