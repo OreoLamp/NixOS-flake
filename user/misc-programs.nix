@@ -185,14 +185,9 @@
 
             # Disables pull fast-forwarding, so git creates a pull commit for those
             pull.ff = false;
-
-            push.gpgSign = true;
-
+            
             # Allow this many fetch jobs for submodules in parallel
             submodule.fetchJobs = 12;
-
-            # GPG sign tags
-            tag.gpgSign = true;
         };
     };
 
