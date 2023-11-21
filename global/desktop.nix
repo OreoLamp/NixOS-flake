@@ -10,7 +10,7 @@
 
     # TODO: xdg mime apps
     xdg.mime.enable = true;
-    
+
     # Config for gtk and qt
     gtk.iconCache.enable = true;
     qt = {

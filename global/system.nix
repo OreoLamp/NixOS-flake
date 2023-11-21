@@ -18,6 +18,9 @@
 
         # Generic desktop config stuff
         ./desktop.nix
+
+        # User config (testing whether loading it from here works?)
+        ../user/user.nix
     ];
 
     # Networking config

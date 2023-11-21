@@ -33,7 +33,7 @@
                     ./global/system.nix
 
                     # User configs
-                    ./user/user.nix
+                    # ./user/user.nix
                 ];
             };
         };
