@@ -5,7 +5,7 @@
         # Basic utility packages
         file lshw pciutils psmisc curl strace lsof
         # Conveniences
-        du-dust unar btop tmux nnn nvimpager nix-tree
+        du-dust unar btop tmux nnn neovim nvimpager nix-tree
     ];
 
     # Networking config

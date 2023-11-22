@@ -16,11 +16,9 @@
     programs.bash.shellInit = ''export HISTFILE="$XDG_STATE_HOME"/bash/history'';
 
     # Global zsh stuff
+    # TODO: Set this up properly without HM and without .zshenv being a thing
     programs.zsh = {
         enable = true;
-        
-        # .zshenv yeetage
-        shellInit = ''export ZDOTDIR="$HOME"/.config/zsh'';
     };
 
     # zsh config, done in home-manager because home-manager is actually moronic
@@ -30,7 +28,7 @@
         enable = true;
         enableCompletion = true;
         enableAutosuggestions = true;
-        dotDir = "$HOME/.config/zsh";
+        dotDir = ".config/zsh";
 
         # History stuff
         history = {
