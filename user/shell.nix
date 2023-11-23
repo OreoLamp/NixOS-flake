@@ -53,6 +53,7 @@ setopt INC_APPEND_HISTORY_TIME
 
         # Aliases (duh)
         shellAliases = {
+            dev = "nix develop";
             sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix/NixOS-flake#desktop-nix";
         };
     };

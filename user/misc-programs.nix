@@ -106,7 +106,7 @@
             disable_ligatures = "never";
 
             # Cursor color
-            cursor = "#FFCC00";
+            cursor = "#ffcc00";
 
             # Scrollback lines to keep in memory
             scrollback_lines = 10000;
