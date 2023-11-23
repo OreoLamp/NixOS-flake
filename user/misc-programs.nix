@@ -65,7 +65,7 @@
     hm.home.file."git.config" = {
         enable = true;
         source = ./configs/git.config;
-        target = git/config;
+        target = ".config/git/config";
     };
 
     # Btop
