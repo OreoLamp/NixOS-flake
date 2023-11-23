@@ -62,7 +62,7 @@
 
     # Enables git, sources the git user config file
     programs.git.enable = true;
-    hm.file."git.config" = {
+    hm.home.file."git.config" = {
         enable = true;
         source = ./configs/git.config;
         target = git/config;
