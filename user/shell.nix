@@ -34,7 +34,7 @@
         history = {
             ignoreDups = false;
             ignoreSpace = false;
-            path = "$HOME/.config/zsh/zsh_history.txt";
+            path = "$HOME/.local/share/zsh/zsh_history.txt";
             save = 1000000000;
             size = 1000000000;
             share = false;

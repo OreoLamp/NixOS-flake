@@ -8,22 +8,59 @@
     ];
 
     # Enables gnome-keyring and seahorse
-    security.pam.services.eero.enableGnomeKeyring = true;
+    # security.pam.services.eero.enableGnomeKeyring = true;
     services.gnome.gnome-keyring.enable = true;
     programs.seahorse.enable = true;
 
-    # gpg setup
-    hm.programs.gpg.enable = true;
-    # TODO: Fix this, this apparently does not work???
-    hm.programs.gpg.homedir = "${config.hm.xdg.dataHome}/gnupg";
-    hm.services.gpg-agent.enable = true;
-    hm.services.gpg-agent.pinentryFlavor = "gnome3";
+    # GPG agent config
+    programs.gnupg.agent = {
+        # Makes gpg use the gnome3 variant of the password prompt program
+        pinentryFlavor = "gnome3";
 
-    # Enables polkit
-    security.polkit.enable = true;
+        settings = {
+            # Yeets $HOME/.gnupg to a more sane location
+            homedir = "${config.users.users.eero.home}/.local/share/gnupg";
 
-    # Enables rtkit
-    security.rtkit.enable = true;
+            # Logfile path
+            log-file = "${config.users.users.eero.home}/.local/share/gnupg/log";
+        };
+    };
+
+    # General security system config
+    security = {
+        # PAM config
+        pam = {
+            # PAM service config
+            services.eero = {
+                # Enables gnome-keyring
+                enableGnomeKeyring = true;
+
+                # Enables gpg keyring unlocking
+                gnupg.enable = true;
+            };
+        };
+
+        # sudo config
+        sudo = {
+            # Technically unnecessary but i'd rather be explicit about this
+            enable = true;
+
+            # Disables password prompt timeout, enables insults lol
+            extraConfig = ''
+Defaults passwd_timeout=0
+Defaults insults
+'';
+        };
+
+        # Enables polkit
+        polkit.enable = true;
+
+        # Enables rtkit
+        rtkit.enable = true;
+
+        # Enables TPM2
+        tpm2.enable = true;
+    };
 
     # SSH config
     # TODO: Set up an SSH server
