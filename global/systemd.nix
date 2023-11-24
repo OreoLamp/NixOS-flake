@@ -38,8 +38,9 @@
         user.services.gnome-keyring = {
             enable = true;
             description = "GNOME keyring daemon";
-            partOf = [ "graphical-session-pre.target" ];
-            wantedBy = [ "graphical-session-pre.target" ];
+            wantedBy = [ "graphical-session.target" ];
+            wants = [ "graphical-session.target" ];
+            after = [ "graphical-session.target" ];
             environment = {
                 SSH_AUTH_SOCK = "${builtins.getEnv "XDG_RUNTIME_DIR"}/keyring/ssh";
             };
