@@ -4,7 +4,6 @@
     users.users.eero.packages = with pkgs; [
         gnupg # For some reason have to manually specify this to be installed???
         libsecret # Required for vscode gpg integration
-        gcr_4 # Gnome crypto services (Their impl has the best ui lol)
     ];
 
     # Enables gnome-keyring and seahorse
@@ -30,18 +29,7 @@
 
     # General security system config
     security = {
-        # PAM config
-        pam = {
-            # PAM service config
-            services.eero = {
-                # Enables gnome-keyring
-                enableGnomeKeyring = true;
-
-                # Enables gpg keyring unlocking
-                gnupg.enable = true;
-            };
-        };
-
+        
         # sudo config
         sudo = {
             # Technically unnecessary but i'd rather be explicit about this
@@ -62,18 +50,5 @@ Defaults insults
 
         # Enables TPM2
         tpm2.enable = true;
-    };
-
-    # SSH config
-    # TODO: Set up an SSH server
-    programs.ssh = {
-        # Starts SSH agent when the user logs in
-        startAgent = true;
-
-        # enables ssh-askpass (gui for asking ssh password)
-        enableAskPassword = true;
-
-        # Uses gnome thingy for ssh-askpass
-        askPassword = "${pkgs.gcr}/libexec/gcr-ssh-askpass";
     };
 }

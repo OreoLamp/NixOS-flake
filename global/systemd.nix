@@ -33,6 +33,23 @@
                 TimeoutStopSec = 10;
             };
         };
+
+        # Starts gcr ssh-agent on login, again cursed af but no sane way to do this...
+        user.services.gnome-keyring = {
+            enable = true;
+            description = "GNOME keyring daemon";
+            partOf = [ "graphical-session-pre.target" ];
+            wantedBy = [ "graphical-session-pre.target" ];
+            environment = {
+                SSH_AUTH_SOCK = "${builtins.getEnv "XDG_RUNTIME_DIR"}/keyring/ssh";
+            };
+            serviceConfig = {
+                Type = "simple";
+                ExecStart = let args = "--start --foreground --components=secrets,ssh";
+                    in "${pkgs.gnome.gnome-keyring}/bin/gnome-keyring-daemon ${args}";
+                Restart = "on-abort";
+            };
+        };
     };
 
     #! Syslog config
