@@ -4,6 +4,8 @@
     users.defaultUserShell = pkgs.zsh;
 
     users.users.eero = {
+        home = "/home/eero";
+        uid = 1000;
         isNormalUser = true;
         description = "Eero Lampela";
         extraGroups = [ "networkmanager" "wheel" ];
@@ -31,7 +33,6 @@
         users.eero = {
             programs.home-manager.enable = true;
             home.stateVersion = "23.05";
-            xdg.enable = true;
             home = {
                 username = "eero";
                 homeDirectory = "/home/eero";

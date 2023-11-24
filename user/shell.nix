@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
     # Packages used
     users.users.eero.packages = with pkgs; [
@@ -7,9 +7,26 @@
     ];
 
     # Global shell config, applies to all shells
-    environment.variables = {
-        # Yeets .gnupg/ from $HOME
-        GNUPGHOME = "/home/eero/.local/share/gnupg";
+    environment.sessionVariables = let HOME = "${config.users.users.eero.home}";
+        in rec {
+        # XDG stuff
+        XDG_CONFIG_HOME = "${HOME}/.config";
+        XDG_CACHE_HOME = "${HOME}./cache";
+        XDG_DATA_HOME = "${HOME}/.local/share";
+        XDG_STATE_HOME = "${HOME}/.local/state";
+        XDG_RUNTIME_DIR = "/run/user/${config.users.users.eero.uid}";
+
+        # GPG home
+        GNUPGHOME = "${XDG_DATA_HOME}/gnupg";
+
+        # Setting SSH sock properly to work with gnome-keyring
+        SSH_AUTH_SOCK = "${XDG_RUNTIME_DIR}/keyring/ssh";
+
+        # Gets rid of .cargo in $HOME
+        CARGO_HOME = "${XDG_DATA_HOME}/cargo";
+
+        # Gets rid of .sonarlint in $HOME
+        SONARLINT_USER_HOME = "${XDG_DATA_HOME}/sonarlint";
     };
 
     # Bash history file yeetage
