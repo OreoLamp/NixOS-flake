@@ -14,6 +14,8 @@
 
     # GPG agent config
     programs.gnupg.agent = {
+        enable = true;
+
         # Makes gpg use the gnome3 variant of the password prompt program
         pinentryFlavor = "gnome3";
 
