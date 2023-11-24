@@ -20,6 +20,7 @@
         # Gnome polkit authentication agent service, starts on login
         # This is cursed as fuck but nixos has apparently no sane way of doing this
         user.services.polkit-gnome-authentication-agent-1 = {
+            enable = true;
             description = "polkit-gnome-authentication-agent-1";
             wantedBy = [ "graphical-session.target" ];
             wants = [ "graphical-session.target" ];
@@ -50,7 +51,7 @@
         Defaults are 10k messages / 30 seconds. 
         */
         rateLimitBurst = 20000;
-        rateLimitInterval = "60s";
+        rateLimitInterval = "10s";
 
         # Makes journald read the kernel ring buffer (kmesg)
         extraConfig = "ReadKMsg = true";
