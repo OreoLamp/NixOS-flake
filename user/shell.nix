@@ -14,7 +14,7 @@
         XDG_CACHE_HOME = "${HOME}./cache";
         XDG_DATA_HOME = "${HOME}/.local/share";
         XDG_STATE_HOME = "${HOME}/.local/state";
-        XDG_RUNTIME_DIR = "/run/user/${config.users.users.eero.uid}";
+        XDG_RUNTIME_DIR = "/run/user/${builtins.toString config.users.users.eero.uid}";
 
         # GPG home
         GNUPGHOME = "${XDG_DATA_HOME}/gnupg";
