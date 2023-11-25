@@ -4,6 +4,7 @@
     users.users.eero.packages = with pkgs; [
         quintom-cursor-theme
         tokyo-night-gtk
+        gnome.adwaita-icon-theme
     ];
 
     # Cursor theme
@@ -29,7 +30,13 @@
         # General gtk theme
         theme = {
             package = pkgs.tokyo-night-gtk;
-            name = "Tokyo-Night-B";
+            name = "Tokyonight-Dark-B";
+        };
+
+        # Icon theme
+        iconTheme = {
+          package = pkgs.gnome.adwaita-icon-theme;
+          name = "Adwaita";
         };
     };
 }
