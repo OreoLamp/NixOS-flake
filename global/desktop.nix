@@ -11,13 +11,8 @@
     # TODO: xdg mime apps
     xdg.mime.enable = true;
 
-    # Config for gtk and qt
+    # Enables icon cache for gtk
     gtk.iconCache.enable = true;
-    qt = {
-        enable = true;
-        platformTheme = "gnome";
-        style = "adwaita-dark";
-    };
 
     # Enables flatpaks
     services.flatpak.enable = true;

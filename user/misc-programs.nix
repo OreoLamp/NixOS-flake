@@ -89,7 +89,6 @@
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
-        font.name = "JetBrainsMono Nerd Font Thin";
         font.size = 11;
         settings = {
             # Font families
@@ -99,7 +98,7 @@
             bold_italic_font = "JetBrainsMono Nerd Font Medium Italic";
 
             # Font size
-            font_size = 11;
+            font_size = 12;
 
             # Enable ligatures by default
             disable_ligatures = "never";

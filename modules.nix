@@ -34,6 +34,9 @@
         # Font config
         ./user/fonts.nix
 
+        # Theme config
+        ./user/theming.nix
+
         # Add an alias "hm" for "home-manager.users.eero"
         ( lib.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "eero" ] )
 
