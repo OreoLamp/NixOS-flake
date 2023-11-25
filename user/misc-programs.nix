@@ -89,6 +89,7 @@
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
+        font.name = "JetBrainsMOno Nerd Font ExtraLight";
         font.size = 11;
         settings = {
             # Font families
