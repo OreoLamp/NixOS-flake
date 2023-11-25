@@ -38,7 +38,6 @@
         tldr # Gives tldr examples of how to use commands
         kitty-themes # For themes in kitty
         meld # GUI diff / merge tool
-        # Dependencies not installed automatically
         # TODO: Figure out LLVM and GCC stuff
         # Sets up gnome keyring as the password storage
         # Also moves extensions to somewhere more sane

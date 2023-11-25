@@ -34,7 +34,8 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         enable = true;
 
         # Hinting options
-        hinting.style = "slight";
+        hinting.style = "medium";
+        hinting.autohint = true;
         subpixel.rgba = "rgb";
         antialias = true;
 

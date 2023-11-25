@@ -40,6 +40,7 @@
         show-trace = true;
 
         # Makes nix comply with XDG base directories for files in $HOME
+        # Yeah right... They still exist lol
         use-xdg-base-directories = true;
 
         # Enable some experimental features
