@@ -7,12 +7,12 @@
     ];
 
     # Cursor theme
-    home.pointerCursor = {
+    hm.home.pointerCursor = {
             package = pkgs.quintom-cursor-theme;
             name = "Quintom_Ink";
     };
     
-    # qt config
+    # Qt config
     qt = {
         enable = true;
         platformTheme = "gnome";
