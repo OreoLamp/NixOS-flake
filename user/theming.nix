@@ -11,11 +11,12 @@
             package = pkgs.quintom-cursor-theme;
             name = "Quintom_Ink";
     };
-    
+
     # Qt config
     qt = {
         enable = true;
         platformTheme = "gnome";
+        style = "adwaita-dark";
     };
 
     # GTK config
