@@ -30,7 +30,7 @@
         # General gtk theme
         theme = {
             package = pkgs.tokyo-night-gtk;
-            name = "Tokyonight-Dark-B";
+            name = "Tokyonight-Dark-BL";
         };
 
         # Icon theme
