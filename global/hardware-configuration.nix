@@ -30,6 +30,24 @@
         fsType = "vfat";
     };
 
+    # Sets up zram swap (in-place live memory compression)
+    zramSwap = {
+        enable = true;
+        memoryPercent = 50;
+        algorithm = "zstd";
+    };
+
+    # Kernel parameters set by sysctl
+    boot.kernel.sysctl = {
+        # Swappiness is stupidly high bc zram is really fast
+        "vm.swappiness" = 180;
+
+        # pop_os magic settings for zram?
+        "vm.watermark_boost_factor" = 0;
+        "vm.watermark_scale_factor" = 125;
+        "vm.page-cluster" = 0;
+    };
+
     swapDevices = [ ];
 
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
