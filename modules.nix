@@ -7,6 +7,9 @@
         # Boot config and such
         ./global/boot.nix
 
+        # System config for things like swap, kernel parameters, etc
+        ./global/system.nix
+
         # System-wide graphics, sound, xdg, printing, flatpaks etc
         ./global/desktop.nix
 

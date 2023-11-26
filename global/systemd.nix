@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-    #! Custom systemd units
     systemd = {
 
         # Mount unit for 2tb SSD
@@ -53,7 +52,7 @@
         };
     };
 
-    #! Syslog config
+    # Syslog config
     # TODO: Make a custom compression algorithm for these, seems like a cool project
     services.journald = {
         # Keep syslogs in persistent storage

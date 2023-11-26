@@ -39,14 +39,4 @@
             LC_TIME = "en_DK.UTF-8";
         };
     };
-
-    # Enables locate services, and uses plocate for them
-    services.locate = {
-        enable = true;
-        package = pkgs.plocate;
-        # TODO: Figure out a way to auto-update the database in a sane way
-        interval = "never";
-        # set to null because otherwise plocate complains lol
-        localuser = null;
-    };
 }
