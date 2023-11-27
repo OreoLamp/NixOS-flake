@@ -69,8 +69,8 @@
     };
 
     # Neovim
+    # Not enabled because it overrides the user config file and i don't want that
     programs.neovim = {
-        enable = true;
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
