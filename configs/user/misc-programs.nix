@@ -89,14 +89,14 @@
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
-        font.name = "JetBrainsMOno Nerd Font ExtraLight";
+        font.name = "JetBrainsMOno Nerd Font Mono ExtraLight";
         font.size = 11;
         settings = {
             # Font families
-            font_family = "JetBrainsMono Nerd Font ExtraLight";
-            bold_font = "JetBrainsMono Nerd Font Medium";
-            italic_font = "JetBrainsMono Nerd Font ExtraLight Italic";
-            bold_italic_font = "JetBrainsMono Nerd Font Medium Italic";
+            font_family = "JetBrainsMono Nerd Font Mono ExtraLight";
+            bold_font = "JetBrainsMono Nerd Font Mono Medium";
+            italic_font = "JetBrainsMono Nerd Font Mono ExtraLight Italic";
+            bold_italic_font = "JetBrainsMono Nerd Font Mono Medium Italic";
 
             # Font size
             font_size = 12;

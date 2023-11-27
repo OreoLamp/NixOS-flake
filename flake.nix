@@ -33,7 +33,7 @@
                     ./nix.nix
 
                     # System-wide configs
-                    ./modules.nix
+                    ./configs/index.nix
                 ];
             };
         };

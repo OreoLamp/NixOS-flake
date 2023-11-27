@@ -34,7 +34,7 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         enable = true;
 
         # Hinting options
-        hinting.style = "medium";
+        hinting.style = "full";
         hinting.autohint = true;
         subpixel.rgba = "rgb";
         antialias = true;
@@ -62,16 +62,16 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
     </prefer>
 </alias>
 
-    <!-- Use jetbrains mono as default monospace, fall back to Noto Sans mono -->
+<!-- Use jetbrains mono as default monospace, fall back to Noto Sans mono -->
 <alias>
     <family>monospace</family>
     <prefer>
-        <family>JetBrainsMono Nerd Font</family>
+        <family>JetBrainsMono Nerd Font Mono</family>
         <family>Noto Sans Mono</family>
     </prefer>
 </alias>
     
-    <!-- Set noto serif as default serif, no fallbacks needed -->
+<!-- Set noto serif as default serif, no fallbacks needed -->
 <alias>
     <family>serif</family>
     <prefer>
@@ -79,7 +79,7 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
     </prefer>
 </alias>
 
-    <!-- Use Blinker as default system-ui, fall back to Noto Sans UI -->
+<!-- Use Blinker as default system-ui, fall back to Noto Sans UI -->
 <alias>
     <family>system-ui</family>
     <prefer>
