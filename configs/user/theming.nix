@@ -25,7 +25,7 @@
         enable = true;
 
         # Moves the gtk2 config folder to a sane location
-        gtk2.configLocation = ".config/gtk-2.0/gtkrc";
+        gtk2.configLocation = "/home/eero/.config/gtk-2.0/gtkrc";
 
         # General gtk theme
         theme = {
