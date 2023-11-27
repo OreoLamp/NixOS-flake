@@ -68,6 +68,14 @@
         target = ".config/git/config";
     };
 
+    # Neovim
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
+    };
+
     # Btop
     hm.programs.btop = {
         enable = true;
