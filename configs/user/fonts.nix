@@ -54,39 +54,43 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         # TODO: Get rid of artificial boldening and italics (???)
         # TODO: Proper noto fallbacks
         localConf = ''
-<!-- Use Noto Sans as default sans-serif, no fallbacks needed -->
-<alias>
-    <family>sans-serif</family>
-    <prefer>
-        <family>Noto Sans</family>
-    </prefer>
-</alias>
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM 'urn:fontconfig:fonts.dtd'>
+<fontconfig>
+    <!-- Use Noto Sans as default sans-serif, no fallbacks needed -->
+    <alias>
+        <family>sans-serif</family>
+        <prefer>
+            <family>Noto Sans</family>
+        </prefer>
+    </alias>
 
-<!-- Use jetbrains mono as default monospace, fall back to Noto Sans mono -->
-<alias>
-    <family>monospace</family>
-    <prefer>
-        <family>JetBrainsMono Nerd Font Mono</family>
-        <family>Noto Sans Mono</family>
-    </prefer>
-</alias>
-    
-<!-- Set noto serif as default serif, no fallbacks needed -->
-<alias>
-    <family>serif</family>
-    <prefer>
-        <family>Noto Serif</family>
-    </prefer>
-</alias>
+    <!-- Use jetbrains mono as default monospace, fall back to Noto Sans mono -->
+    <alias>
+        <family>monospace</family>
+        <prefer>
+            <family>JetBrainsMono Nerd Font Mono</family>
+            <family>Noto Sans Mono</family>
+        </prefer>
+    </alias>
 
-<!-- Use Blinker as default system-ui, fall back to Noto Sans UI -->
-<alias>
-    <family>system-ui</family>
-    <prefer>
-        <family>Blinker</family>
-        <family>Noto Sans UI</family>
-    </prefer>
-</alias>
+    <!-- Set noto serif as default serif, no fallbacks needed -->
+    <alias>
+        <family>serif</family>
+        <prefer>
+            <family>Noto Serif</family>
+        </prefer>
+    </alias>
+
+    <!-- Use Blinker as default system-ui, fall back to Noto Sans UI -->
+    <alias>
+        <family>system-ui</family>
+        <prefer>
+            <family>Blinker</family>
+            <family>Noto Sans UI</family>
+        </prefer>
+    </alias>
+</fontconfig>
         '';
     };
 }
