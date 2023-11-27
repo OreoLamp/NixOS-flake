@@ -45,6 +45,7 @@
         ( vscode.override { commandLineArgs = ''--password-store="gnome" --extensions-dir "$XDG_DATA_HOME/vscode" --user-data-dir "$XDG_CONFIG_HOME/vscode"''; } )
         nil # Nix language server
         shellcheck # Shell language server
+        shfmt
         go # Go language
         ghc # Glasgow Haskell Compiler
         haskell-language-server # take a guess

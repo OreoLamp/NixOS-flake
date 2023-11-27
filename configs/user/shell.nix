@@ -7,13 +7,12 @@
     ];
 
     # Global shell config, applies to all shells
-    environment.sessionVariables = let HOME = "${config.users.users.eero.home}";
-        in rec {
+    environment.sessionVariables = rec {
         # XDG stuff
-        XDG_CONFIG_HOME = "${HOME}/.config";
-        XDG_CACHE_HOME = "${HOME}./cache";
-        XDG_DATA_HOME = "${HOME}/.local/share";
-        XDG_STATE_HOME = "${HOME}/.local/state";
+        XDG_CONFIG_HOME = "$HOME/.config";
+        XDG_CACHE_HOME = "$HOME./cache";
+        XDG_DATA_HOME = "$HOME/.local/share";
+        XDG_STATE_HOME = "$HOME/.local/state";
         XDG_RUNTIME_DIR = "/run/user/${builtins.toString config.users.users.eero.uid}";
 
         # GPG home
