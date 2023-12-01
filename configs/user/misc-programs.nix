@@ -58,6 +58,7 @@
         cue # Cue programming language
         cuelsp # Cue language server
         cuetools # Cue utilities
+        lemminx # XML language server
     ];
 
     # Enables git, sources the git user config file
@@ -76,22 +77,7 @@
         vimAlias = true;
     };
 
-    # Btop
-    hm.programs.btop = {
-        enable = true;
-        settings = {
-            color_theme = "tokyo-night";
-            update_ms = 1000;
-            proc_sorting = "memory";
-            proc_cpu_graphs = false;
-            proc_filter_kernel = true;
-            cpu_graph_lower = "idle";
-            swap_disk = false;
-            disk_free_priv = true;
-            show_io_stat = true;
-            io_mode = true;
-        };
-    };
+
 
     # Kitty
     # TODO: Set up cue to configure this properly and just source the file
