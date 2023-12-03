@@ -70,14 +70,20 @@
     };
 
     # Neovim
-    # Not enabled because it overrides the user config file and i don't want that
     programs.neovim = {
+        enable = true;
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
     };
 
-
+    # Steam... let's see if this works at all
+    programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        gamescopeSession.enable = true;
+    };
 
     # Kitty
     # TODO: Set up cue to configure this properly and just source the file
