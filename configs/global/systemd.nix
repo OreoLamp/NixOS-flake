@@ -71,6 +71,9 @@
         rateLimitInterval = "10s";
 
         # Makes journald read the kernel ring buffer (kmesg)
-        extraConfig = "ReadKMsg = true";
+        extraConfig = ''
+            ReadKMsg = true
+            MaxLevelStore="debug"
+        '';
     };
 }
