@@ -84,6 +84,9 @@
         dedicatedServer.openFirewall = true;
         gamescopeSession.enable = true;
     };
+    
+    # 32 bit libraries needed for steam
+    hardware.opengl.driSupport32Bit = true;
 
     # Kitty
     # TODO: Set up cue to configure this properly and just source the file
