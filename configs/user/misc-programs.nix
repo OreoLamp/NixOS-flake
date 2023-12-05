@@ -35,7 +35,7 @@
         lsd # ls but better # TODO: Check out eza?
         fzf # Command line fuzzy finder
         ripgrep # Faster grep with more capabilities
-        tldr # Gives tldr examples of how to use commands
+        tealdeer # Gives TLDR examples of commands, and respects XDG base directory spec
         kitty-themes # For themes in kitty
         meld # GUI diff / merge tool
         # TODO: Figure out LLVM and GCC stuff
