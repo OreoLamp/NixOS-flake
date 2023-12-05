@@ -6,6 +6,16 @@
         atuin
     ];
 
+    # Atuin stuff for history
+    hm.programs.atuin = {
+        enable = true;
+        settings = {
+            style = "compact";
+            filter_mode_shell_up_key_binding = "directory";
+            show_preview = true;
+        };
+    };
+
     # Global shell config, applies to all shells
     environment.sessionVariables = rec {
         # XDG stuff
@@ -29,7 +39,7 @@
     };
 
     # Bash history file yeetage
-    programs.bash.shellInit = ''export HISTFILE="$XDG_STATE_HOME"/bash/history'';
+    programs.bash.shellInit = ''export HISTFILE="$XDG_DATA_HOME"/bash/history.txt'';
 
     # Global zsh stuff
     # TODO: Set this up properly without HM and without .zshenv being a thing
@@ -71,16 +81,6 @@ setopt INC_APPEND_HISTORY_TIME
         shellAliases = {
             dev = "nix develop";
             sysrebuild = "sudo nixos-rebuild switch --flake /home/eero/.config/nix/NixOS-flake#desktop-nix";
-        };
-    };
-
-    # Atuin stuff for history
-    hm.programs.atuin = {
-        enable = true;
-        settings = {
-            style = "compact";
-            filter_mode_shell_up_key_binding = "directory";
-            show_preview = true;
         };
     };
 }
