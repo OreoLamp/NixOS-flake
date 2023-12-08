@@ -6,6 +6,9 @@
         # Nixpkgs
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+        # Nixpkgs master branch (just in case lol)
+        nixpkgs-master.url = "github:nixos/nixpkgs/master";
+
         # Home manager
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
