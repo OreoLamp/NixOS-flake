@@ -20,6 +20,7 @@
     outputs = {
         self,
         nixpkgs,
+        nixpkgs-master,
         home-manager,
         ...
     } @ inputs: {
