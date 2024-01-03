@@ -5,24 +5,24 @@
         neofetch # System information thingy
         mpv # Minimal video player
         imv # Minimal image viewer
-        nomacs # Less minimal image viewer, but has an actual gui
-        peazip # ZIP file manager (should yeet ngl)
+        # nomacs # Less minimal image viewer, but has an actual gui
+        # peazip # ZIP file manager (should yeet ngl)
         firefox # Browser
         libsForQt5.okular # Document viewer / editor
-        inkscape # Vector graphics editor
-        gimp # Image editor
+        # inkscape # Vector graphics editor
+        # gimp # Image editor
         audacity # Waveform editor
-        obs-studio # Screen recorder
-        qbittorrent # Bittorrent client with a GUI
+        # obs-studio # Screen recorder
+        # qbittorrent # Bittorrent client with a GUI
         mullvad-vpn # VPN
-        bitwarden # Password manager
-        calibre # Ebook library thingy
+        # bitwarden # Password manager
+        # calibre # Ebook library thingy
         signal-desktop # Messaging platform
         telegram-desktop # Another messaging platform
         spotify # For music
         spotifywm # Sets the spotify window title correctly. # TODO: Configure this
-        spotifyd # Daemonized spotify: # TODO: Configure this
-        tofi # Launcher / runner
+        # spotifyd # Daemonized spotify: # TODO: Configure this
+        tofi # Launcher / runner # TODO: Configure
         eww-wayland # Custom widgets # TODO: Set up
         swaylock # Lock screen support # TODO: Set up
         wayshot # Screenshot utility for Wayland
@@ -37,27 +37,27 @@
         ripgrep # Faster grep with more capabilities
         tealdeer # Gives TLDR examples of commands, and respects XDG base directory spec
         kitty-themes # For themes in kitty
-        meld # GUI diff / merge tool
+        # meld # GUI diff / merge tool
         # TODO: Figure out LLVM and GCC stuff
         # Sets up gnome keyring as the password storage
         # Also moves extensions to somewhere more sane
         # And confg folder from .config/Code to .config/vscode
         ( vscode.override { commandLineArgs = ''--password-store="gnome" --extensions-dir "$XDG_DATA_HOME/vscode" --user-data-dir "$XDG_CONFIG_HOME/vscode"''; } )
         nil # Nix language server
-        shellcheck # Shell language server
-        shfmt
-        go # Go language
-        ghc # Glasgow Haskell Compiler
-        haskell-language-server # take a guess
-        julia # Julia toolchain ig?
-        fortls # Fortran language server
-        R # R compiler and programming language
-        rPackages.languageserver # R language server
-        ruby-lsp # Ruby language server
-        rust-analyzer # Rust language server
-        cue # Cue programming language
-        cuelsp # Cue language server
-        cuetools # Cue utilities
+        # shellcheck # Shell language server
+        # shfmt
+        # go # Go language
+        # ghc # Glasgow Haskell Compiler
+        # haskell-language-server # take a guess
+        # julia # Julia toolchain ig?
+        # fortls # Fortran language server
+        # R # R compiler and programming language
+        # rPackages.languageserver # R language server
+        # ruby-lsp # Ruby language server
+        # rust-analyzer # Rust language server
+        # cue # Cue programming language
+        # cuelsp # Cue language server
+        # cuetools # Cue utilities
         lemminx # XML language server
     ];
 
@@ -76,32 +76,15 @@
         viAlias = true;
         vimAlias = true;
     };
-
-    # Steam... let's see if this works at all
-    programs.steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-        gamescopeSession.enable = true;
-    };
     
-    # 32 bit libraries needed for steam
-    hardware.opengl.driSupport32Bit = true;
-
     # Kitty
     # TODO: Set up cue to configure this properly and just source the file
     hm.programs.kitty = {
         enable = true;
         shellIntegration.enableZshIntegration = true;
-        font.name = "JetBrainsMOno Nerd Font Mono ExtraLight";
+        font.name = "JetBrainsMOno Nerd Font Mono";
         font.size = 11;
         settings = {
-            # Font families
-            font_family = "JetBrainsMono Nerd Font Mono ExtraLight";
-            bold_font = "JetBrainsMono Nerd Font Mono Medium";
-            italic_font = "JetBrainsMono Nerd Font Mono ExtraLight Italic";
-            bold_italic_font = "JetBrainsMono Nerd Font Mono Medium Italic";
-
             # Font size
             font_size = 12;
 

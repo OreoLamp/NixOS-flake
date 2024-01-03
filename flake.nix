@@ -37,7 +37,7 @@
                     ./nix.nix
 
                     # System-wide configs
-                    ./configs/index.nix
+                    ./configs/files.nix
                 ];
             };
         };
