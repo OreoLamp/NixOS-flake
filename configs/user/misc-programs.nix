@@ -19,6 +19,7 @@
         # calibre # Ebook library thingy
         signal-desktop # Messaging platform
         telegram-desktop # Another messaging platform
+        discord
         spotify # For music
         spotifywm # Sets the spotify window title correctly. # TODO: Configure this
         # spotifyd # Daemonized spotify: # TODO: Configure this
@@ -37,6 +38,7 @@
         ripgrep # Faster grep with more capabilities
         tealdeer # Gives TLDR examples of commands, and respects XDG base directory spec
         kitty-themes # For themes in kitty
+        lunarvim # A neovim distro
         # meld # GUI diff / merge tool
         # TODO: Figure out LLVM and GCC stuff
         # Sets up gnome keyring as the password storage
