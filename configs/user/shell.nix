@@ -41,12 +41,6 @@
     # Bash history file yeetage
     programs.bash.shellInit = ''export HISTFILE="$XDG_DATA_HOME"/bash/history.txt'';
 
-    # Global zsh stuff
-    # TODO: Set this up properly without HM and without .zshenv being a thing
-    programs.zsh = {
-        enable = true;
-    };
-
     # zsh config, done in home-manager because home-manager is actually moronic
     # TODO: This whole shitshow in .zshrc, and just yeet it in the correct place with home-manager
     # (fuck home-manager)

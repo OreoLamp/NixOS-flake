@@ -38,7 +38,6 @@
         ripgrep # Faster grep with more capabilities
         tealdeer # Gives TLDR examples of commands, and respects XDG base directory spec
         kitty-themes # For themes in kitty
-        lunarvim # A neovim distro
         # meld # GUI diff / merge tool
         # TODO: Figure out LLVM and GCC stuff
         # Sets up gnome keyring as the password storage
@@ -77,6 +76,7 @@
         defaultEditor = true;
         viAlias = true;
         vimAlias = true;
+        withNodeJs = true;
     };
     
     # Kitty
