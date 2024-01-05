@@ -87,7 +87,7 @@ find . -name METADATA.pb -exec bash -c "DIR=\$(dirname \"{}\") ; STYLES=\$(ls -1
         <family>system-ui</family>
         <prefer>
             <family>Blinker</family>
-            <family>Noto Sans UI</family>
+            <family>Noto Sans</family>
         </prefer>
     </alias>
 </fontconfig>

@@ -15,9 +15,13 @@
             show_preview = true;
         };
     };
-
+ 
     # Global shell config, applies to all shells
-    environment.sessionVariables = rec {
+    environment.variables = rec {
+        # Allow users to set their own pager and editor...
+        EDITOR = "";
+        PAGER = "";
+
         # XDG stuff
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_CACHE_HOME = "$HOME./cache";
