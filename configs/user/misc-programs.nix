@@ -60,6 +60,7 @@
         # cuelsp # Cue language server
         # cuetools # Cue utilities
         lemminx # XML language server
+        wireshark # Wireshark
     ];
 
     # Enables git, sources the git user config file
