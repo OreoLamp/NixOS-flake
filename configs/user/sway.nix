@@ -44,6 +44,14 @@
                     "${mod}+Shift+s" = ''exec wayshot -s "$(slurp)" -e png --stdout | wl-copy; tee $XDG_PICTURES_DIR/screenshots/(date "+%Y-%m-%d %H-%M-%S").png'';
                 };
 
+            # Mouse settings
+            input = {
+                "type:pointer" = {
+                    accel_profile = "adaptive";
+                    pointer_accel = "-0.75";
+                };
+            };
+
             # Font settings
             fonts = {
                 names = [ 
